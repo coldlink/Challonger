@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{00AFB229-A697-4F2C-8056-1F71CC65DF6E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Challonger</RootNamespace>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AssemblyName>Challonger</AssemblyName>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <ReleaseVersion>0.6</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Code\Json.cs" />
+    <Compile Include="Code\gVar.cs" />
+    <Compile Include="TournamentListActivity.cs" />
+    <Compile Include="TournamentLiveImageActivity.cs" />
+    <Compile Include="ViewTournamentInfoActivity.cs" />
+    <Compile Include="Code\ParticipantCustomRow.cs" />
+    <Compile Include="Code\MatchesCustomRow.cs" />
+    <Compile Include="Code\FinalRankCustomRow.cs" />
+    <Compile Include="EditTournamentStateDialog.cs" />
+    <Compile Include="EditParticipantInfoDialog.cs" />
+    <Compile Include="Code\TournamentInfoCustomRow.cs" />
+    <Compile Include="CreateTournmaneDialog.cs" />
+    <Compile Include="MainActivityTab.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Resources\web_hi_res_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\layout\TournamentList.axml" />
+    <AndroidResource Include="Resources\layout\TournamentLiveImage.axml" />
+    <AndroidResource Include="Resources\layout\ViewTournamentInfo.axml" />
+    <AndroidResource Include="Resources\layout\MatchInfoListLayout.axml" />
+    <AndroidResource Include="Resources\layout\ParticipantInfoListLayout.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_challonge.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_challonge.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_challonge.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_challonge.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_challonge.png" />
+    <AndroidResource Include="Resources\menu\ViewTournamentInfoMenu.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_refresh_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_refresh_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_refresh_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_refresh_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_refresh_white_48dp.png" />
+    <AndroidResource Include="Resources\layout\TournamentInfoStateDialogLayout.axml" />
+    <AndroidResource Include="Resources\layout\ProgressLayout.axml" />
+    <AndroidResource Include="Resources\layout\EditParticipantInfoDialogLayout.axml" />
+    <AndroidResource Include="Resources\layout\TournamentInfoListLayout.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_add_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_add_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_add_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_add_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_add_white_48dp.png" />
+    <AndroidResource Include="Resources\layout\AddParticipantInfoDialogLayout.axml" />
+    <AndroidResource Include="Resources\layout\CreateNewTournamentDialogLayout.axml" />
+    <AndroidResource Include="Resources\layout\NewTournamentDialogLayout.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\layout\MainTabLayout.axml" />
+    <AndroidResource Include="Resources\layout\MainTabLayout_Main.axml" />
+    <AndroidResource Include="Resources\layout\MainTabLayout_Settings.axml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Code\" />
+    <Folder Include="Resources\menu\" />
+  </ItemGroup>
+</Project>

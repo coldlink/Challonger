@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/linMain">
+    <TextView
+        android:text="@string/txtGetAPI"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtGetAPI" />
+    <TextView
+        android:text="@string/txtCopyPaste"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtCopyPaste" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtAPIKey"
+        android:hint="@string/txtAPIKey"
+        android:password="true" />
+    <Button
+        android:text="@string/btnSaveAPIKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSaveAPIKey" />
+    <TextView
+        android:text="@string/txtSpinnerText"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSpinnerText" />
+    <Spinner
+        android:id="@+id/spinMainMenu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/txtSpinnerText"
+        android:entries="Item 1" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSubdomain"
+        android:hint="@string/txtSubdomain" />
+    <TextView
+        android:text="@string/txtInfoURL"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtInfoURL" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/txtSubdomainURL"
+            android:hint="@string/txtSubdomainURL"
+            android:layout_weight="0.5"
+            android:layout_gravity="right" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/txtURL"
+            android:hint="@string/txtURL"
+            android:layout_weight="1"
+            android:layout_gravity="left" />
+    </LinearLayout>
+    <Button
+        android:text="@string/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSearch" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/space1"
+        android:layout_gravity="bottom"
+        android:layout_weight="1" />
+    <Button
+        android:text="@string/btnChangeAPI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnChangeAPI" />
+</LinearLayout>

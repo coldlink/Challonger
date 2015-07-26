@@ -1,0 +1,128 @@
+﻿using System;
+using System.Json;
+using System.Threading.Tasks;
+using System.Net;
+using System.IO;
+
+using Android.App;
+using Android.Content;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Android.OS;
+
+namespace Challonger
+{
+	[Activity (Label = "Challonger", MainLauncher = true, Icon = "@drawable/icon")]
+	public class MainActivity : Activity
+	{
+		protected override void OnCreate (Bundle bundle)
+		{
+			base.OnCreate (bundle);
+
+			// Set our view from the "main" layout resource
+			SetContentView (Resource.Layout.Main);
+
+			// Get our button from the layout resource,
+			// and attach an event to it
+			EditText txtAPIKey = FindViewById<EditText> (Resource.Id.txtAPIKey);
+			EditText txtSubdomain = FindViewById<EditText> (Resource.Id.txtSubdomain);
+			Button btnSearch = FindViewById<Button> (Resource.Id.btnSearch);
+			Button btnSaveAPIKey = FindViewById<Button> (Resource.Id.btnSaveAPIKey);
+			TextView responseView = FindViewById<TextView> (Resource.Id.responseView);
+			LinearLayout linLay = FindViewById<LinearLayout> (Resource.Id.linearLayoutTournament);
+
+			//Load Preferences
+			LoadPreferences ();
+			txtAPIKey.Text = gVar.apiKey_;
+
+
+			//save any changed options
+			btnSaveAPIKey.Click += (object IntentSender, EventArgs e) => 
+			{
+				gVar.apiKey_ = txtAPIKey.Text;
+				SavePreferences(gVar.apiKey_);
+			};
+
+			btnSearch.Click += async (object sender, EventArgs e) =>
+			{
+				//var intent = new Intent(this, typeof(TournamentListActivity));
+
+				linLay.RemoveAllViews ();
+
+				string url = gVar.URL_ + "tournaments.json?" + "api_key=" + gVar.apiKey_;
+				if (txtSubdomain.Text != "")
+					url += "&subdomain=" + txtSubdomain.Text;
+				
+				JsonValue json = await Json.GetJson (url);
+				DisplayFoundTournaments (json, responseView, linLay);
+
+				//StartActivity(intent);
+			};
+		}
+
+		private void DisplayFoundTournaments (JsonValue json, TextView responseView, LinearLayout linLay)
+		{
+			int count = json.Count;
+
+			responseView.Text = count + " tournaments found:";
+
+			for (int i = 0; i < count; i++)
+			{
+				JsonValue getTournament = json[i];
+				JsonValue tournament = getTournament["tournament"];
+				LinearLayout.LayoutParams layParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+				Button btn = new Button (this);
+				btn.Id = i;
+				btn.Text = tournament["name"];
+				linLay.AddView (btn, layParams);
+	
+				Button btn1 = ((Button)FindViewById<Button> (i));
+				btn1.Click += async (object sender, EventArgs e) =>  
+				{
+					string url;
+					if (tournament["subdomain"] != null)
+						url = gVar.URL_ + "tournaments/" + tournament["subdomain"] + "-" + tournament["url"] + ".json?" + "api_key=" + gVar.apiKey_ + "&include_participants=1&include_matches=1";
+					else
+						url = gVar.URL_ + "tournaments/" + tournament["url"] + ".json?" + "api_key=" + gVar.apiKey_ + "&include_participants=1&include_matches=1";
+
+					JsonValue json1 = await Json.GetJson (url);
+					Console.Out.WriteLine("Count values json1: {0}", json1.Count);
+
+					JsonValue getTournament2 = json1["tournament"];
+					Console.Out.WriteLine("Count values getTournament2: {0}", getTournament2.Count);
+
+					JsonValue getTournament3 = getTournament2["matches"];
+					Console.Out.WriteLine("Count values getTournament3: {0}", getTournament3.Count);
+
+					JsonValue getTournament4 = getTournament2["participants"];
+					Console.Out.WriteLine("Count values getTournament4: {0}", getTournament4.Count);
+
+					var jsonDialog = new AlertDialog.Builder(this);
+					jsonDialog.SetMessage(json1.ToString());
+					jsonDialog.Show();
+				};
+			}
+				
+		}
+
+		private void LoadPreferences()
+		{
+			var prefs = this.GetSharedPreferences ("Challonger.preferences", FileCreationMode.WorldReadable);
+
+			if (prefs.Contains ("api_key"))
+				gVar.apiKey_ = prefs.GetString ("api_key", "");
+		}
+
+		private void SavePreferences (string api_key)
+		{
+			var prefs = this.GetSharedPreferences ("Challonger.preferences", FileCreationMode.WorldWriteable);
+
+			var editor = prefs.Edit ();
+
+			editor.PutString ("api_key", api_key);
+			editor.Commit ();
+		}
+
+	}
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:minWidth="25px"
+    p1:minHeight="25px"
+    p1:layout_width="match_parent"
+    p1:layout_height="wrap_content">
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/linLayEditTournamentState">
+        <TextView
+            p1:text="@string/txtEditTournamentState_Start"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtEditTournamentState_Start" />
+        <Button
+            p1:text="@string/btnEditTournamentState_Start"
+            p1:layout_width="fill_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/btnEditTournamentState_Start" />
+        <TextView
+            p1:text="@string/txtEditTournamentState_Finalize"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtEditTournamentState_Finalize" />
+        <Button
+            p1:text="@string/btnEditTournamentState_Finalize"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/btnEditTournamentState_Finalize" />
+        <TextView
+            p1:text="@string/txtEditTournamentState_Reset"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtEditTournamentState_Reset" />
+        <Button
+            p1:text="@string/btnEditTournamentState_Reset"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/btnEditTournamentState_Reset" />
+        <TextView
+            p1:text="@string/txtEditTournamentState_Destroy"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtEditTournamentState_Destroy" />
+        <Button
+            p1:text="@string/btnEditTournamentState_Destroy"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/btnEditTournamentState_Destroy" />
+    </LinearLayout>
+</RelativeLayout>

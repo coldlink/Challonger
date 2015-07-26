@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+    <Button
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/btnP1ScoreViewMatch" />
+    <Button
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnP1ScoreViewMatch"
+        android:layout_alignParentRight="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/btnP2ScoreViewMatch" />
+    <View
+        android:id="@+id/ViewColorPickerHelper"
+        android:layout_width="1dip"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="4dip"
+        android:layout_marginTop="4dip"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@id/btnP1ScoreViewMatch"
+        android:background="?android:attr/dividerVertical"
+        android:layout_above="@id/btnP2ScoreViewMatch" />
+    <View
+        android:id="@+id/ViewColorPickerHelper1"
+        android:layout_width="1dip"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="4dip"
+        android:layout_marginTop="4dip"
+        android:layout_toLeftOf="@id/btnP2ScoreViewMatch"
+        android:background="?android:attr/dividerVertical"
+        android:layout_below="@id/btnP1ScoreViewMatch"
+        android:layout_above="@+id/txtRoundViewMatch" />
+    <Button
+        android:text="Player 1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/btnP1ScoreViewMatch"
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/btnPlayer1ViewMatch"
+        android:hint="Player 2" />
+    <Button
+        android:text="Player 2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPlayer1ViewMatch"
+        android:layout_toLeftOf="@id/btnP2ScoreViewMatch"
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/btnPlayer2ViewMatch" />
+    <TextView
+        android:text="Round: 1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPlayer2ViewMatch"
+        android:layout_alignParentRight="true"
+        android:id="@+id/txtRoundViewMatch" />
+    <TextView
+        android:text="Match: A"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPlayer2ViewMatch"
+        android:id="@+id/txtMatchInfoIdent" />
+    <TextView
+        android:text="Status: A"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPlayer2ViewMatch"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txtMatchInfoStatus" />
+    <Button
+        android:text="@string/btnMatchInfoSave"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtMatchInfoStatus"
+        android:id="@+id/btnMatchInfoSave" />
+</RelativeLayout>

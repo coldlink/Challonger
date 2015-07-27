@@ -367,7 +367,6 @@ namespace Challonger
 
 			for (int i = 0; i < jsonMatches.Count; i++) {
 				string score = jsonMatches [i] ["match"] ["scores_csv"];
-                Console.Out.WriteLine (score);
 				int p1score = 0;
 				int p2score = 0;
 				if (score == "" || score == null)
@@ -405,7 +404,6 @@ namespace Challonger
 				}
 
 				MatchInfo _info = new MatchInfo ();
-		
 				_info.id = jsonMatches [i] ["match"] ["id"];
 				_info.state = jsonMatches [i] ["match"] ["state"];
 

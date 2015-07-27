@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.coldlink.challonger" android:versionName="0.6.0" android:installLocation="auto" android:versionCode="12">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.coldlink.challonger" android:versionName="0.6.1" android:installLocation="auto" android:versionCode="13">
 	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="21" />
 	<application android:label="Challonger" android:icon="@drawable/Icon"></application>
 	<uses-permission android:name="android.permission.INTERNET" />

@@ -7,88 +7,88 @@ using Android.Content;
 
 namespace Challonger
 {
-	public class TournamentInfo
-	{
-		public string top{ get; set; }
+    public class TournamentInfo
+    {
+        public string top{ get; set; }
 
-		public string bottom{ get; set; }
+        public string bottom{ get; set; }
 
-		public TournamentInfo (string _top, string _bottom)
-		{
-			top = _top;
-			bottom = _bottom;
-		}
-	}
+        public TournamentInfo(string _top, string _bottom)
+        {
+            top = _top;
+            bottom = _bottom;
+        }
+    }
 
-	public class TournamentInfoListAdapter : BaseAdapter<TournamentInfo>
-	{
-		Activity context;
+    public class TournamentInfoListAdapter : BaseAdapter<TournamentInfo>
+    {
+        Activity context;
 
-		List<TournamentInfo> list;
+        List<TournamentInfo> list;
 
-		public TournamentInfoListAdapter (Activity _context, List<TournamentInfo> _list) : base ()
-		{
-			this.context = _context;
-			this.list = _list;
-		}
+        public TournamentInfoListAdapter(Activity _context, List<TournamentInfo> _list)
+            : base()
+        {
+            this.context = _context;
+            this.list = _list;
+        }
 
-		public override int Count {
-			get{ return list.Count; }
-		}
+        public override int Count
+        {
+            get{ return list.Count; }
+        }
 
-		public override long GetItemId (int position)
-		{
-			return position;
-		}
+        public override long GetItemId(int position)
+        {
+            return position;
+        }
 
-		public override TournamentInfo this [int index] {
-			get{ return list [index]; }
-		}
+        public override TournamentInfo this [int index]
+        {
+            get{ return list[index]; }
+        }
 
-		public override View GetView (int position, View convertView, ViewGroup parent)
-		{
+        public override View GetView(int position, View convertView, ViewGroup parent)
+        {
 
-			ViewHolder vh;
+            ViewHolder vh;
 
-			View view = convertView;
+            View view = convertView;
 
-			if (view == null) {
-				view = context.LayoutInflater.Inflate (Resource.Layout.TournamentInfoListLayout, parent, false);
-				vh = new ViewHolder ();
-				vh.Initalize (view);
-				view.Tag = vh;
-			}				
+            if (view == null)
+            {
+                view = context.LayoutInflater.Inflate(Resource.Layout.TournamentInfoListLayout, parent, false);
+                vh = new ViewHolder();
+                vh.Initalize(view);
+                view.Tag = vh;
+            }				
 
-			var item = this [position];
+            var item = this[position];
 
-			vh = (ViewHolder)view.Tag;
+            vh = (ViewHolder)view.Tag;
 
-			vh.Bind (this.context, item.top, item.bottom);
+            vh.Bind(item.top, item.bottom);
 
-			return view;
-		}
+            return view;
+        }
 
-		private class ViewHolder : Java.Lang.Object
-		{
-			Activity Context;
-			TextView txtTop;
-			TextView txtBottom;
+        private class ViewHolder : Java.Lang.Object
+        {
+            TextView txtTop;
+            TextView txtBottom;
 
-			string top;
-			string bottom;
+            public void Initalize(View view)
+            {
+                txtTop = view.FindViewById<TextView>(Resource.Id.txtTournamentInfoTop);
+                txtBottom = view.FindViewById<TextView>(Resource.Id.txtTournamentInfoBottom);
+            }
 
-			public void Initalize (View view)
-			{
-				txtTop = view.FindViewById<TextView> (Resource.Id.txtTournamentInfoTop);
-				txtBottom = view.FindViewById<TextView> (Resource.Id.txtTournamentInfoBottom);
-			}
-
-			public void Bind (Activity _context, string _top, string _bottom)
-			{
-				txtTop.Text = _top;
-				txtBottom.Text = _bottom;
-			}
-		}
-	}
+            public void Bind(string _top, string _bottom)
+            {
+                txtTop.Text = _top;
+                txtBottom.Text = _bottom;
+            }
+        }
+    }
 }
 

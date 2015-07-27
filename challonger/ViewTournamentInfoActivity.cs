@@ -382,6 +382,21 @@ namespace Challonger
 		
 				_info.id = jsonMatches [i] ["match"] ["id"];
 				_info.state = jsonMatches [i] ["match"] ["state"];
+
+                string state = jsonMatches [i] ["match"] ["state"];
+                switch (state)
+                {
+                    case "open":
+                        _info.stateId = 0;
+                        break;
+                    case "pending":
+                        _info.stateId = 1;
+                        break;
+                    case "complete":
+                        _info.stateId = 2;
+                        break;
+                }
+
 				_info.ident = jsonMatches [i] ["match"] ["identifier"];
 
 				if (jsonTournament ["subdomain"] == null)

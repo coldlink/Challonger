@@ -433,9 +433,9 @@ namespace Challonger
                 itemsInfo.Add(new TournamentInfo("N/A", this.GetString(Resource.String.viewTournamentInfo_Signup)));
 
             if (jsonTournament["hold_third_place_match"] && jsonTournament["tournament_type"] == "single elimination")
-                itemsInfo.Add(new TournamentInfo(this.GetString(Resource.String.True), this.GetString(Resource.String.viewTournamentInfo_Signup)));
+                itemsInfo.Add(new TournamentInfo(this.GetString(Resource.String.True), this.GetString(Resource.String.viewTournamentInfo_3rdPlace)));
             else if (!jsonTournament["hold_third_place_match"] && jsonTournament["tournament_type"] == "single elimination")
-                itemsInfo.Add(new TournamentInfo(this.GetString(Resource.String.False), this.GetString(Resource.String.viewTournamentInfo_Signup)));
+                itemsInfo.Add(new TournamentInfo(this.GetString(Resource.String.False), this.GetString(Resource.String.viewTournamentInfo_3rdPlace)));
             else
                 itemsInfo.Add(new TournamentInfo("N/A", this.GetString(Resource.String.viewTournamentInfo_3rdPlace)));
         }

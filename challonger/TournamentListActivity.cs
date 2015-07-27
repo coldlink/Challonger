@@ -32,7 +32,6 @@ namespace Challonger
 			SetContentView (Resource.Layout.TournamentList);
 			string url = Intent.GetStringExtra ("url") ?? "no_url";
 			bool flagSingle = Intent.GetBooleanExtra ("flag", false);
-
 			TextView responseView = FindViewById<TextView> (Resource.Id.responseView);
 			LinearLayout linLay = FindViewById<LinearLayout> (Resource.Id.linearLayoutTournament);
 			ProgressBar progTournamentListActivityIndicator = FindViewById<ProgressBar> (Resource.Id.progTournamentListActivityIndicator);
@@ -94,9 +93,10 @@ namespace Challonger
 
 			responseView.Text = count + " " + this.GetString (Resource.String.searchFound);
 
-			for (int i = 0; i < count; i++) {
-				JsonValue tournament;
-				if (flagSingle)
+            for (int i = 0; i < count; i++) {
+                JsonValue tournament;
+
+                if (flagSingle)
 					tournament = json ["tournament"];
 				else {
 					JsonValue getTournament = json [i];
@@ -109,6 +109,11 @@ namespace Challonger
 				linLay.AddView (btn, layParams);
 
 				Button btn1 = ((Button)FindViewById<Button> (i));
+
+                //disabled swiss type and 2 stage tournaments
+                if (tournament ["group_stages_enabled"] || tournament["tournament_type"] == "swiss")
+                    btn1.Enabled = false;
+
 				btn1.Click += (object sender, EventArgs e) => {
 					string url = gVar.URL_ + "tournaments/";
 					if (tournament ["subdomain"] != null) {
@@ -120,8 +125,6 @@ namespace Challonger
 					var intent = new Intent (this, typeof(ViewTournamentInfoActivity));
 
 					intent.PutExtra ("url", url);
-					//intent.PutExtra ("urlm", urlm);
-					//Console.Out.WriteLine (urlm);
 					gVar.boolTournamentEditModeEnabled = false;
 					gVar.lastViewTournamentInfoTabSelected = 0;
 					this.Finish ();

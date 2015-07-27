@@ -56,7 +56,6 @@ namespace Challonger
 				listViewLayViewTournamentInfo.RemoveAllViews ();
 
 			url = Intent.GetStringExtra ("url") ?? "";
-			Console.Out.WriteLine (url);
 			//check for internet connection
 			var connectivityManager = (ConnectivityManager)GetSystemService (ConnectivityService);
 			var activeConnection = connectivityManager.ActiveNetworkInfo;
@@ -128,7 +127,6 @@ namespace Challonger
 				gVar.lastViewTournamentInfoTabSelected = 0;
 			}
 				
-			Console.Out.WriteLine (gVar.lastViewTournamentInfoTabSelected.ToString ());
 			ActionBar.SetSelectedNavigationItem (gVar.lastViewTournamentInfoTabSelected);
 		}
 

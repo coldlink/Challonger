@@ -262,7 +262,6 @@ namespace Challonger
 
 			void btnP1_Click (object sender, EventArgs e)
 			{
-				Console.Out.WriteLine (state);
 				if (gVar.boolTournamentEditModeEnabled) {
 					switch (state) {
 					case "open":
@@ -293,7 +292,7 @@ namespace Challonger
 
 			void btnP2_Click (object sender, EventArgs e)
 			{
-				Console.Out.WriteLine (state);
+
 				if (gVar.boolTournamentEditModeEnabled) {
 					switch (state) {
 					case "open":

@@ -243,6 +243,9 @@ namespace Challonger
 				chkPrivate = view.FindViewById<CheckBox> (Resource.Id.chkCreateTournament_Private);
 				btnCreate = view.FindViewById<Button> (Resource.Id.btnCreateTournament);
 
+                //disable creation of swiss tournament
+                radBtnSwiss.Visibility = ViewStates.Gone;
+
 				btnCreate.Click += BtnCreate_Click;
 				;
 			

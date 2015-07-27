@@ -86,8 +86,6 @@ namespace Challonger
 			else
 				delUrl += "tournaments/" + json ["url"] + ".json?api_key=" + gVar.apiKey_;
 
-			Console.Out.WriteLine (delUrl);
-
 			var connectivityManager = (ConnectivityManager)context.GetSystemService ("connectivity");
 			var activeConnection = connectivityManager.ActiveNetworkInfo;
 
@@ -155,8 +153,6 @@ namespace Challonger
 				postUrl += "tournaments/" + json ["subdomain"] + "-" + json ["url"] + "/" + type + ".json?api_key=" + gVar.apiKey_;
 			else
 				postUrl += "tournaments/" + json ["url"] + "/" + type + ".json?api_key=" + gVar.apiKey_;
-
-			Console.Out.WriteLine (postUrl);
 
 			var connectivityManager = (ConnectivityManager)context.GetSystemService ("connectivity");
 			var activeConnection = connectivityManager.ActiveNetworkInfo;

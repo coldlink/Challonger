@@ -98,7 +98,7 @@ namespace Challonger
 
 			vh = (ViewHolder)view.Tag;
 
-			vh.Bind (this.context, item.id, item.ident, item.state, item.stateId, item.p1, item.p2, item.round, item.p1s, item.p2s, 
+			vh.Bind (this.context, item.id, item.ident, item.state, item.p1, item.p2, item.round, item.p1s, item.p2s, 
 				item.p1prematchid, item.p1isprematchloser, item.p2prematchid, item.p2isprematchloser, item.winId, 
 				item.losId, item.p1id, item.p2id, item.subdomain, item.url);
 
@@ -120,7 +120,6 @@ namespace Challonger
 			int id;
 			string ident;
 			string state;
-            int stateId;
 			string p1;
 			string p2;
 			int round;
@@ -163,7 +162,7 @@ namespace Challonger
 				};
 			}
 
-			public void Bind (Activity _context, int _id, string _ident, string _state, int _stateId, string _p1, string _p2, 
+			public void Bind (Activity _context, int _id, string _ident, string _state, string _p1, string _p2, 
 			                  int _round, int _p1s, int _p2s, int _p1prematchid, bool _p1isprematchloser, int _p2prematchid, 
 			                  bool _p2isprematchloser, int _winId, int _losId, int _p1id, int _p2id, string _subdomain, string _url)
 			{

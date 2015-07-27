@@ -112,6 +112,7 @@
     <AndroidResource Include="Resources\layout\MainTabLayout.axml" />
     <AndroidResource Include="Resources\layout\MainTabLayout_Main.axml" />
     <AndroidResource Include="Resources\layout\MainTabLayout_Settings.axml" />
+    <AndroidResource Include="Resources\layout\EditTournamentTypeLayout.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

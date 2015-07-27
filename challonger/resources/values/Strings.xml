@@ -78,17 +78,26 @@
 	<string name="viewTournamentInfo_LiveImageClick">Click to view</string>
 	<string name="viewTournamentInfo_State">State</string>
 	<string name="viewTournamentInfo_Signup">Sign up URL</string>
-  <string name="viewTournamentInfo_3rdPlace">Include 3rd place match</string>
+    <string name="viewTournamentInfo_3rdPlace">3rd place match included</string>
+    <string name="btnEditType">Save tournament type</string>
+    <string name="tstEditType">Cannot change type of underway or complete tournament.</string>
 	<string name="tstEditEnabled">Editing Enabled!</string>
 	<string name="tstEditDisabled">Editing Disabled!</string>
 	<string name="tstAddParticipantEditDisabled">Edit Mode currently disabled. Cannot add participant.</string>
 	<string name="tstAddParticipantNotPending">Cannot add participant to underway or complete tournament.</string>
 	<string name="editTournamentName">Edit Tournament Name</string>
 	<string name="editTournamentNameMsg">Enter the new tournament name (Max: 60 Characters):</string>
+	<string name="editTournamentGame">Edit Game Name</string>
+	<string name="editTournamentGameMsg">Enter the new game name:</string>
 	<string name="editTournamentTstSuccess">Tournament information changed!</string>
+	<string name="editTournamentTypeTstSuccess">Tournament information changed!</string>
 	<string name="editTournamentDescription">Edit Tournament Description</string>
 	<string name="editTournamentDescriptionMsg">Enter the new tournament description:</string>
+	<string name="editTournamentOrganisation">Edit Tournament Organisation. Will change tournament url.</string>
+	<string name="editTournamentOrganisationMsg">Enter the new organisation:</string>
+	<string name="tstTournamentOrganisation">Changing organisation or url currently not supported.</string>
 	<string name="editTournamentState">Edit Tournament State</string>
+	<string name="editTournamentType">Edit Tournament Type</string>
 	<string name="editTournamentStateStart">Start Tournament</string>
 	<string name="editTournamentStateReset">Reset Tournament</string>
 	<string name="txtEditTournamentState_Start">Start a tournament, opening up first round matches for score reporting. The tournament must have at least 2 participants:</string>
@@ -131,4 +140,6 @@
 	<string name="strWinnerOf">Winner of&#160;</string>
 	<string name="strUsername">Username:&#160;</string>
 	<string name="strState">Status:&#160;</string>
+	<string name="True">Yes</string>
+	<string name="False">No</string>
 </resources>

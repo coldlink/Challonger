@@ -32,4 +32,19 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:id="@+id/btnSaveAPIKey" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <Button
+        android:text="@string/btnHowToUse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/btnHowToUse" />
+    <Button
+        android:text="@string/btnAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/btnAbout" />
 </LinearLayout>

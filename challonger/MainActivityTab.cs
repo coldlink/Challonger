@@ -217,7 +217,9 @@ namespace Challonger
 			protected EditText txtDiscription;
 			protected CheckBox chkSignup;
 			protected CheckBox chkPrivate;
+            protected CheckBox chkSE3rdPlace;
 			protected Button btnCreate;
+            protected EditText txtCap;
 
 			public CreateTabFragment (Activity _context)
 			{
@@ -242,6 +244,8 @@ namespace Challonger
 				chkSignup = view.FindViewById<CheckBox> (Resource.Id.chkCreateTournament_Signup);
 				chkPrivate = view.FindViewById<CheckBox> (Resource.Id.chkCreateTournament_Private);
 				btnCreate = view.FindViewById<Button> (Resource.Id.btnCreateTournament);
+                chkSE3rdPlace = view.FindViewById<CheckBox> (Resource.Id.chkCreateTournament_SE_3rdPlaceMatch);
+                txtCap = view.FindViewById<EditText> (Resource.Id.txtCreateTournament_Cap_Edit);
 
                 //disable creation of swiss tournament
                 radBtnSwiss.Visibility = ViewStates.Gone;
@@ -283,13 +287,21 @@ namespace Challonger
 					if (txtDiscription.Text != "")
 						jsonPost += ",\"description\":\"" + txtDiscription.Text + "\"";
 
-					if (chkSignup.Checked)
+                    if (txtCap.Text != "" && txtCap.Text != "0")
+                        jsonPost += ",\"signup_cap\": " + txtCap.Text;
+
+                    if (chkSE3rdPlace.Checked && type == "single elimination")
+                        jsonPost += ",\"hold_third_place_match\": true";
+
+                    if (chkSignup.Checked)
 						jsonPost += ",\"open_signup\": true";
 
 					if (chkPrivate.Checked)
 						jsonPost += ",\"private\": true";
 
 					jsonPost += "}}";
+
+                    Console.Out.WriteLine (jsonPost);
 
 					var connectivityManager = (ConnectivityManager)context.GetSystemService ("connectivity");
 					var activeConnection = connectivityManager.ActiveNetworkInfo;

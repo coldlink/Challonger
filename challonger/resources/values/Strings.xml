@@ -3,12 +3,9 @@
 	<string name="app_name">Challonger</string>
 	<string name="ok">Ok</string>
 	<string name="cancel">Cancel</string>
-
-	<!--- Main Activity Text-->
 	<string name="tabMain">Menu</string>
 	<string name="tabCreate">Create</string>
 	<string name="tabSettings">Settings</string>
-
 	<string name="txtWelcome">Welcome to Challonger.</string>
 	<string name="noAPI">Welcome to Challonger.\n\nClick \"Ok\" to be taken to the settings page to add your API Key.\n\nThe API Key is required to access Challonge through this app.</string> 
 	<string name="txtGetAPI">Get your API key from http://challonge.com/settings/developer/</string>
@@ -24,58 +21,52 @@
 	<string name="btnSaveAPIKey">Save API Key</string>
 	<string name="btnChangeAPI">Change API Key</string>
 	<string name="tstSaveAPI">API Key saved</string>
-
-
 	<string name="txtSpinnerText">Choose an option:</string>
-            <string name="txtMainView">View created tournaments.</string>
-        <string name="txtMainSub">View list of tournaments from organisation.</string>
-        <string name="txtMainURL" >View a tournament from a Challonge URL.</string>
-
-    <string name="txtCreateTournament_Title">Create New Tournament</string>
-    <string name="txtCreateTournament_Name">Your event\'s name/title (Max: 60 characters)</string>
-    <string name="txtCreateTournament_Name_Edit">Event name - (Required)</string>
-    <string name="txtCreateTournament_Type">Choose a tournament type:</string>
+  <string name="txtMainView">View created tournaments.</string>
+  <string name="txtMainSub">View list of tournaments from organisation.</string>
+  <string name="txtMainURL" >View a tournament from a Challonge URL.</string>
+  <string name="txtCreateTournament_Title">Create New Tournament</string>
+  <string name="txtCreateTournament_Name">Your event\'s name/title (Max: 60 characters)</string>
+  <string name="txtCreateTournament_Name_Edit">Event name - (Required)</string>
+  <string name="txtCreateTournament_Type">Choose a tournament type:</string>
 	<string name="radBtnCreateTournamentType_Single">Single Elimination</string>
 	<string name="radBtnCreateTournamentType_Double">Double Elimination</string>
 	<string name="radBtnCreateTournamentType_Round">Round Robin</string>
 	<string name="radBtnCreateTournamentType_Swiss">Swiss Style</string>
-    <string name="txtCreateTournament_URL">URL: challonge.com/{url} - (letters, numbers, and underscores only)</string>
-    <string name="txtCreateTournament_URL_Edit">{url} - Required</string>
-    <string name="txtCreateTournament_Subdomain">Organisation: {organisation}.challonge.com/url - (Requires write access to the specified organisation)</string>
-    <string name="txtCreateTournament_Subdomain_Edit">{organisation} - If Applicable</string>
-    <string name="txtCreateTournament_Description">Description/instructions to be displayed above/with the bracket:</string>
-    <string name="txtCreateTournament_Description_Edit">Description - Not Required</string>
-    <string name="chkCreateTournament_Signup">Have Challonge host a sign-up page? (Otherwise, you manually add all participants)</string>
-    <string name="chkCreateTournament_Private">Make private - Hides the tournament from the public browsable index and your profile.</string>
-    <string name="tstCreateTournament_Created">Tournament created!</string>
-    <string name="tstCreateTournament_NameReq">Tournament Name Required!</string>
-    <string name="tstCreateTournament_URLReq">Tournament URL Required!</string>
-    <string name="txtNewTournamentURL">Tournament Full URL:</string>
-    <string name="txtNewTournamentSignup">Tournament Signup URL:</string>
-    <string name="btnNewTournament_View">View New Tournament</string>
-
+  <string name="txtCreateTournament_URL">URL: challonge.com/{url} - (letters, numbers, and underscores only)</string>
+  <string name="txtCreateTournament_URL_Edit">{url} - Required</string>
+  <string name="txtCreateTournament_Subdomain">Organisation: {organisation}.challonge.com/url - (Requires write access to the specified organisation)</string>
+  <string name="txtCreateTournament_Subdomain_Edit">{organisation} - If Applicable</string>
+  <string name="txtCreateTournament_Description">Description/instructions to be displayed above/with the bracket:</string>
+  <string name="txtCreateTournament_Description_Edit">Description - Not Required</string>
+  <string name="txtCreateTournament_Cap">Maximum number of participants in the bracket. Leave blank or 0 for no cap:</string>
+  <string name="txtCreateTournament_Cap_Edit">Cap</string>
+  <string name="chkCreateTournament_Signup">Have Challonge host a sign-up page? (Otherwise, you manually add all participants)</string>
+  <string name="chkCreateTournament_Private">Make private - Hides the tournament from the public browsable index and your profile.</string>
+  <string name="chkCreateTournament_SE_3rdPlaceMatch">Include a 3rd place match between semifinal losers? (Single Elimination only)</string>
+  <string name="tstCreateTournament_Created">Tournament created!</string>
+  <string name="tstCreateTournament_NameReq">Tournament Name Required!</string>
+  <string name="tstCreateTournament_URLReq">Tournament URL Required!</string>
+  <string name="txtNewTournamentURL">Tournament Full URL:</string>
+  <string name="txtNewTournamentSignup">Tournament Signup URL:</string>
+  <string name="btnNewTournament_View">View New Tournament</string>
 	<string name="dlgAPIEmpty">No API key entered. Please try again.</string>
 	<string name="dlgAPIShort">API key is too short. Please check and try again.</string>
 	<string name="dlgAPILong">API key is too long. Please check and try again.</string>
 	<string name="dlgtxtSubdomain">No Organisation entered. Please try again.</string>
 	<string name="dlgtxtURL">No URL entered. Please try again.</string>
-
 	<string name="dlg401"> Unauthorized - Invalid API Key or Insufficent Permissions.</string>
 	<string name="dlg404"> 404 not found. Please check and try again.</string>
 	<string name="dlg406"> Requested format is not supported - request JSON or XML only. You should not see this. If you do please contact the developer.</string>
 	<string name="dlg422"> Validation error(s) for create or update method. Does your input exist? Check input and try again.</string>
 	<string name="dlg500"> Something went wrong with Challonge. If you keep recieving this contact the developer and/or Challonge</string>
-
 	<string name="errNoConnection">No internet connection detected. Please check connection and try again.</string>
-
 	<string name="searchResults">Search Results</string>
 	<string name="searchFound"> tournament(s) found:</string>
-
 	<string name="viewTournamentInfo_Info">Info</string>
 	<string name="viewTournamentInfo_Matches">Matches</string>
 	<string name="viewTournamentInfo_Participants">Participants</string>
 	<string name="viewTournamentInfo_FinalRank">Final Rank</string>
-
 	<string name="viewTournamentInfo_Info_name">Tournament Name</string>
 	<string name="viewTournamentInfo_Info_participantCount">Participants Count</string>
 	<string name="viewTournamentInfo_Info_description">Description</string>
@@ -87,23 +78,19 @@
 	<string name="viewTournamentInfo_LiveImageClick">Click to view</string>
 	<string name="viewTournamentInfo_State">State</string>
 	<string name="viewTournamentInfo_Signup">Sign up URL</string>
-
+  <string name="viewTournamentInfo_3rdPlace">Include 3rd place match</string>
 	<string name="tstEditEnabled">Editing Enabled!</string>
 	<string name="tstEditDisabled">Editing Disabled!</string>
 	<string name="tstAddParticipantEditDisabled">Edit Mode currently disabled. Cannot add participant.</string>
 	<string name="tstAddParticipantNotPending">Cannot add participant to underway or complete tournament.</string>
-
 	<string name="editTournamentName">Edit Tournament Name</string>
 	<string name="editTournamentNameMsg">Enter the new tournament name (Max: 60 Characters):</string>
 	<string name="editTournamentTstSuccess">Tournament information changed!</string>
-
 	<string name="editTournamentDescription">Edit Tournament Description</string>
 	<string name="editTournamentDescriptionMsg">Enter the new tournament description:</string>
-
 	<string name="editTournamentState">Edit Tournament State</string>
 	<string name="editTournamentStateStart">Start Tournament</string>
 	<string name="editTournamentStateReset">Reset Tournament</string>
-
 	<string name="txtEditTournamentState_Start">Start a tournament, opening up first round matches for score reporting. The tournament must have at least 2 participants:</string>
 	<string name="btnEditTournamentState_Start">Start Tournament</string>
 	<string name="txtEditTournamentState_Finalize">Finalize a tournament that has had all match scores submitted, rendering its results permanent:</string>
@@ -116,7 +103,6 @@
 	<string name="tstStateFinalize">Tournament finalized.</string>
 	<string name="tstStateReset">Tournament reset.</string>
 	<string name="tstStateDestroy">Tournament deleted.</string>
-
 	<string name="txtEditParticipantInfo">Edit/Remove Participant</string>
 	<string name="txtAddParticipantInfo">Add New Participant</string>
 	<string name="txtEditParticipantInfoName">The name displayed in the bracket/schedule - not required if Challonge Username is provided. Must be unique per tournament:</string>
@@ -135,12 +121,10 @@
 	<string name="tstParticipantSave">Participant saved.</string>
 	<string name="tstParticipantAdd">Participant added.</string>
 	<string name="tstParticipantNoName">No Display Name or Challonge Username is provided. At least one is required.</string>
-
 	<string name="btnMatchInfoSave">Save Match Information</string>
 	<string name="dlgWarningCompleteMatchTitle">Warning - Complete Match</string>
-	<string name="dlgWarningCompleteMatchTxt">WARNING: If you change the outcome of a completed match, all matches in the bracket that branch from the updated match will be reset.</string>
+	<string name="dlgWarningCompleteMatchTxt">WARNING: If you change the winner of a completed match, all matches in the bracket that branch from the updated match will be reset.</string>
 	<string name="tstMatchSaved">Match saved.</string>
-
 	<string name="strRound">Round:&#160;</string>
 	<string name="strMatch">Match:&#160;</string>
 	<string name="strLoserOf">Loser of&#160;</string>

@@ -367,15 +367,41 @@ namespace Challonger
 
 			for (int i = 0; i < jsonMatches.Count; i++) {
 				string score = jsonMatches [i] ["match"] ["scores_csv"];
-				int p1score;
-				int p2score;
-				if (score == "" || score == null) {
+                Console.Out.WriteLine (score);
+				int p1score = 0;
+				int p2score = 0;
+				if (score == "" || score == null)
+                {
 					p1score = 0;
 					p2score = 0;
-				} else {
-					string[] scores = score.Split ('-');
-					int.TryParse (scores [0], out p1score);
-					int.TryParse (scores [1], out p2score);
+				}
+                else
+                {
+                    if (score.Contains (','))
+                    {
+                        string [] scores = score.Split (',');
+
+                        for (int j = 0; j < scores.Length; j++)
+                        {
+                            string [] scores1 = scores [j].Split ('-');
+                            int temp1;
+                            int temp2;
+
+                            int.TryParse (scores1 [0], out temp1);
+                            int.TryParse (scores1 [1], out temp2);
+
+                            if (temp1 > temp2)
+                                p1score++;
+                            else
+                                p2score++;
+                        }
+                    }
+                    else
+                    {
+                        string [] scores1 = score.Split ('-');
+                        int.TryParse (scores1 [0], out p1score);
+                        int.TryParse (scores1 [1], out p2score);
+                    }
 				}
 
 				MatchInfo _info = new MatchInfo ();

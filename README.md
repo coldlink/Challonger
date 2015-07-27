@@ -8,6 +8,7 @@ Get latest compiled APK from Builds folder.
 Coming soon to Google Play.
 
 How to use:
+     
      • Add your API key to the "Settings" tab.
 
      • Find tournament through "Menu" tab.

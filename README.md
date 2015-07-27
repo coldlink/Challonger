@@ -40,7 +40,9 @@ Reports issues/Request features through GitHub, email, or Twitter (@coldlink_).
 NOTE: This app requires a Challonge Account to use.
 
 KNOWN ISSUES:
+     
      • Swiss tournaments cannot currently be viewed.
+     
      • Two stage tournaments cannot currently be viewed due to being not supported in the public API.
 
 This App is in no way affiliated with Challonge! except for the fact that I use their awesome API to provide you this service.

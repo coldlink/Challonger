@@ -79,6 +79,7 @@
 	<string name="viewTournamentInfo_State">State</string>
 	<string name="viewTournamentInfo_Signup">Sign up URL</string>
     <string name="viewTournamentInfo_3rdPlace">3rd place match included</string>
+    <string name="viewTournamentInfoCap">Sign up cap</string>
     <string name="btnEditType">Save tournament type</string>
     <string name="tstEditType">Cannot change type of underway or complete tournament.</string>
 	<string name="tstEditEnabled">Editing Enabled!</string>
@@ -130,6 +131,7 @@
 	<string name="tstParticipantSave">Participant saved.</string>
 	<string name="tstParticipantAdd">Participant added.</string>
 	<string name="tstParticipantNoName">No Display Name or Challonge Username is provided. At least one is required.</string>
+	<string name="tstParticipantCap">Participant cap reached. Cannot add new participant.</string>
 	<string name="btnMatchInfoSave">Save Match Information</string>
 	<string name="dlgWarningCompleteMatchTitle">Warning - Complete Match</string>
 	<string name="dlgWarningCompleteMatchTxt">WARNING: If you change the winner of a completed match, all matches in the bracket that branch from the updated match will be reset.</string>

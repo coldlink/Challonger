@@ -188,6 +188,16 @@ namespace Challonger
                         Toast.MakeText(this, this.GetString(Resource.String.tstAddParticipantEditDisabled), ToastLength.Long).Show();
                     else if (jsonTournament["state"] != "pending")
                         Toast.MakeText(this, this.GetString(Resource.String.tstAddParticipantNotPending), ToastLength.Long).Show();
+                    else if (jsonTournament["signup_cap"] != null)
+                    {
+                        if (jsonTournament["signup_cap"].ToString() == jsonTournament["participants_count"].ToString())
+                            Toast.MakeText(this, this.GetString(Resource.String.tstParticipantCap), ToastLength.Long).Show();
+                        else
+                        {
+                            var dialog2 = AddParticipantInfoDialog.Initalize(jsonTournament, this);
+                            dialog2.Show(FragmentManager, "dialog");
+                        }
+                    }
                     else
                     {
                         var dialog2 = AddParticipantInfoDialog.Initalize(jsonTournament, this);
@@ -438,6 +448,12 @@ namespace Challonger
                 itemsInfo.Add(new TournamentInfo(this.GetString(Resource.String.False), this.GetString(Resource.String.viewTournamentInfo_3rdPlace)));
             else
                 itemsInfo.Add(new TournamentInfo("N/A", this.GetString(Resource.String.viewTournamentInfo_3rdPlace)));
+
+            if (jsonTournament["signup_cap"] != null)
+                itemsInfo.Add(new TournamentInfo(jsonTournament["signup_cap"].ToString(), this.GetString(Resource.String.viewTournamentInfoCap)));
+            else
+                itemsInfo.Add(new TournamentInfo("N/A", this.GetString(Resource.String.viewTournamentInfoCap)));
+            
         }
 
         void PopulateMatchInfo()

@@ -20,7 +20,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtNewTournamentURL_Edit"
             android:editable="false"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            android:inputType="text" />
         <Space
             android:layout_width="match_parent"
             android:layout_height="10dp" />
@@ -34,7 +35,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtNewTournamentSignup_Edit"
             android:editable="false"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            android:inputType="text" />
         <Button
             android:text="@string/btnNewTournament_View"
             android:layout_width="match_parent"

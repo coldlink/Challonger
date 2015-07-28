@@ -46,7 +46,8 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:id="@+id/txtSubdomain"
-        android:hint="@string/txtSubdomain" />
+        android:hint="@string/txtSubdomain"
+        android:inputType="text" />
     <TextView
         android:text="@string/txtInfoURL"
         android:padding="5dp"
@@ -66,7 +67,8 @@
             android:hint="@string/txtSubdomainURL"
             android:layout_weight="0.5"
             android:padding="5dp"
-            android:layout_gravity="right" />
+            android:layout_gravity="right"
+            android:inputType="text" />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -74,7 +76,8 @@
             android:padding="5dp"
             android:hint="@string/txtURL"
             android:layout_weight="1"
-            android:layout_gravity="left" />
+            android:layout_gravity="left"
+            android:inputType="text" />
     </LinearLayout>
     <Button
         android:text="@string/btnSearch"

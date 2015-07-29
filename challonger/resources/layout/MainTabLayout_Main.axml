@@ -41,6 +41,13 @@
             android:text="@string/txtMainURL"
             android:id="@+id/radMainURL" />
     </RadioGroup>
+    <TextView
+        android:text="@string/txtInfoSubdomain"
+        android:padding="5dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtInfoSubdomain" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

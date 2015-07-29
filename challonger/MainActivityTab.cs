@@ -88,6 +88,8 @@ namespace Challonger
 
                 TextView txtSpinnerText = view.FindViewById<TextView>(Resource.Id.txtSpinnerText);
 
+                TextView txtInfoSubdomain = view.FindViewById<TextView>(Resource.Id.txtInfoSubdomain);
+
                 RadioButton radMainView = view.FindViewById<RadioButton>(Resource.Id.radMainView);
                 RadioButton radMainSub = view.FindViewById<RadioButton>(Resource.Id.radMainSub);
                 RadioButton radMainUrl = view.FindViewById<RadioButton>(Resource.Id.radMainURL);
@@ -96,6 +98,7 @@ namespace Challonger
                 txtSubdomain.Text = "";
                 txtSubdomainURL.Text = "";
                 txtURL.Text = "";
+                txtInfoSubdomain.Visibility = ViewStates.Gone;
                 txtSubdomain.Visibility = ViewStates.Gone;
                 txtInfoURL.Visibility = ViewStates.Gone;
                 txtSubdomainURL.Visibility = ViewStates.Gone;
@@ -107,6 +110,7 @@ namespace Challonger
                     txtSubdomain.Text = "";
                     txtSubdomainURL.Text = "";
                     txtURL.Text = "";
+                    txtInfoSubdomain.Visibility = ViewStates.Visible;
                     txtSubdomain.Visibility = ViewStates.Visible;
                     txtInfoURL.Visibility = ViewStates.Gone;
                     txtSubdomainURL.Visibility = ViewStates.Gone;
@@ -120,6 +124,7 @@ namespace Challonger
                     txtURL.Text = "";
                     txtSubdomainURL.Text = "";
                     txtSubdomain.Visibility = ViewStates.Gone;
+                    txtInfoSubdomain.Visibility = ViewStates.Gone;
                     txtInfoURL.Visibility = ViewStates.Visible;
                     txtSubdomainURL.Visibility = ViewStates.Visible;
                     txtURL.Visibility = ViewStates.Visible;
@@ -132,6 +137,7 @@ namespace Challonger
                     txtSubdomainURL.Text = "";
                     txtURL.Text = "";
                     txtSubdomain.Visibility = ViewStates.Gone;
+                    txtInfoSubdomain.Visibility = ViewStates.Gone;
                     txtInfoURL.Visibility = ViewStates.Gone;
                     txtSubdomainURL.Visibility = ViewStates.Gone;
                     txtURL.Visibility = ViewStates.Gone;
@@ -145,6 +151,7 @@ namespace Challonger
                     txtURL.Text = "";
                     txtSubdomain.Visibility = ViewStates.Visible;
                     txtInfoURL.Visibility = ViewStates.Gone;
+                    txtInfoSubdomain.Visibility = ViewStates.Visible;
                     txtSubdomainURL.Visibility = ViewStates.Gone;
                     txtURL.Visibility = ViewStates.Gone;
                     btnSearch.Text = this.GetString(Resource.String.btnSearch);
@@ -156,6 +163,7 @@ namespace Challonger
                     txtURL.Text = "";
                     txtSubdomainURL.Text = "";
                     txtSubdomain.Visibility = ViewStates.Gone;
+                    txtInfoSubdomain.Visibility = ViewStates.Gone;
                     txtInfoURL.Visibility = ViewStates.Visible;
                     txtSubdomainURL.Visibility = ViewStates.Visible;
                     txtURL.Visibility = ViewStates.Visible;

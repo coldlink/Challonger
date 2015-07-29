@@ -3,6 +3,7 @@
 	<string name="app_name">Challonger</string>
 	<string name="ok">Ok</string>
 	<string name="cancel">Cancel</string>
+	<string name="warning">Warning</string>
 	<string name="tabMain">Menu</string>
 	<string name="tabCreate">Create</string>
 	<string name="tabSettings">Settings</string>
@@ -13,10 +14,11 @@
 	<string name="txtAPIKey">API Key (REQUIRED)</string>
 	<string name="btnSearch">Get Tournaments</string>
 	<string name="btnSearchCreate">Create Tournament</string>
-	<string name="txtSubdomain">Organisation</string>
-	<string name="txtInfoURL">Enter the URL below\n{Organisation}.challonge.com/{URL}\n(Organisation is not required):</string>
-	<string name="txtSubdomainURL">Organisation</string>
-	<string name="txtURL">URL</string>
+	<string name="txtSubdomain">{organisation}</string>
+	<string name="txtInfoURL">{organisation}.challonge.com/{url}\n(Organisation is not required):</string>
+	<string name="txtInfoSubdomain">{organisation}.challonge.com</string>
+	<string name="txtSubdomainURL">{organisation}</string>
+	<string name="txtURL">{url}</string>
 	<string name="txtDotChallongeSlash">(.)challonge.com/</string>
 	<string name="btnSaveAPIKey">Save API Key</string>
 	<string name="btnChangeAPI">Change API Key</string>
@@ -39,7 +41,7 @@
   <string name="txtCreateTournament_Subdomain_Edit">{organisation} - If Applicable</string>
   <string name="txtCreateTournament_Description">Description/instructions to be displayed above/with the bracket:</string>
   <string name="txtCreateTournament_Description_Edit">Description - Not Required</string>
-  <string name="txtCreateTournament_Cap">Maximum number of participants in the bracket. Leave blank or 0 for no cap:</string>
+  <string name="txtCreateTournament_Cap">Maximum number of participants in the bracket. (Leave blank or 0 for no cap. Minimum cap is 4 players.) </string>
   <string name="txtCreateTournament_Cap_Edit">Cap</string>
   <string name="chkCreateTournament_Signup">Have Challonge host a sign-up page? (Otherwise, you manually add all participants)</string>
   <string name="chkCreateTournament_Private">Make private - Hides the tournament from the public browsable index and your profile.</string>
@@ -94,6 +96,8 @@
 	<string name="editTournamentTypeTstSuccess">Tournament information changed!</string>
 	<string name="editTournamentDescription">Edit Tournament Description</string>
 	<string name="editTournamentDescriptionMsg">Enter the new tournament description:</string>
+		<string name="editTournamentCap">Edit Tournament sign up cap</string>
+	<string name="editTournamentCapMsg">Enter the new tournament sign up cap: (Leave blank or 0 for no sign up cap. Minimum cap is 4 players.)</string>
 	<string name="editTournamentOrganisation">Edit Tournament Organisation. Will change tournament url.</string>
 	<string name="editTournamentOrganisationMsg">Enter the new organisation:</string>
 	<string name="tstTournamentOrganisation">Changing organisation or url currently not supported.</string>
@@ -135,6 +139,7 @@
 	<string name="btnMatchInfoSave">Save Match Information</string>
 	<string name="dlgWarningCompleteMatchTitle">Warning - Complete Match</string>
 	<string name="dlgWarningCompleteMatchTxt">WARNING: If you change the winner of a completed match, all matches in the bracket that branch from the updated match will be reset.</string>
+	<string name="dlgWarningScores">The winner you selected does not match the result of the scores you entered (assuming high score wins). Click Cancel to make changes or OK to submit as is.</string>
 	<string name="tstMatchSaved">Match saved.</string>
 	<string name="strRound">Round:&#160;</string>
 	<string name="strMatch">Match:&#160;</string>

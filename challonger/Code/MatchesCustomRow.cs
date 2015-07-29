@@ -170,8 +170,8 @@ namespace Challonger
             }
 
             public void Bind(Activity _context, int _id, string _ident, string _state, string _p1, string _p2, 
-                     int _round, int _p1s, int _p2s, int _p1prematchid, bool _p1isprematchloser, int _p2prematchid, 
-                     bool _p2isprematchloser, int _winId, int _losId, int _p1id, int _p2id, string _subdomain, string _url)
+                             int _round, int _p1s, int _p2s, int _p1prematchid, bool _p1isprematchloser, int _p2prematchid, 
+                             bool _p2isprematchloser, int _winId, int _losId, int _p1id, int _p2id, string _subdomain, string _url)
             {
                 Context = _context;
 
@@ -290,32 +290,54 @@ namespace Challonger
             {
                 if (gVar.boolTournamentEditModeEnabled)
                 {
-                    switch (state)
+
+                    if (p1s <= p2s)
                     {
-                        case "open":
-                            winId = p1id;
-                            btnP1.SetTextColor(Color.Aqua);
-                            btnP2.SetTextColor(Color.White);
-                            btnSave.Visibility = ViewStates.Visible;
-                            break;
-                        case "complete":
-                            AlertDialog.Builder dlgComp = new AlertDialog.Builder(Context);
-                            dlgComp.SetTitle(Context.GetString(Resource.String.dlgWarningCompleteMatchTitle));
-                            dlgComp.SetMessage(Context.GetString(Resource.String.dlgWarningCompleteMatchTxt));
-                            dlgComp.SetPositiveButton(Context.GetString(Resource.String.ok), delegate
-                                {
-                                    winId = p1id;
-                                    btnP1.SetTextColor(Color.Aqua);
-                                    btnP2.SetTextColor(Color.White);
-                                    btnSave.Visibility = ViewStates.Visible;
-                                    return;
-                                });
-                            dlgComp.SetNegativeButton(Context.GetString(Resource.String.cancel), delegate
-                                {
-                                    return;
-                                });
-                            dlgComp.Show();
-                            break;
+                        AlertDialog.Builder dlgWarningScores = new AlertDialog.Builder(Context);
+                        dlgWarningScores.SetTitle(Context.GetString(Resource.String.warning));
+                        dlgWarningScores.SetMessage(Context.GetString(Resource.String.dlgWarningScores));
+                        dlgWarningScores.SetPositiveButton(Context.GetString(Resource.String.ok), delegate
+                            {
+                                winId = p1id;
+                                btnP1.SetTextColor(Color.Aqua);
+                                btnP2.SetTextColor(Color.White);
+                                btnSave.Visibility = ViewStates.Visible;
+                            });
+                        dlgWarningScores.SetNegativeButton(Context.GetString(Resource.String.cancel), delegate
+                            {
+                                return;
+                            });
+                        dlgWarningScores.Show();
+                    }
+                    else
+                    {
+                        switch (state)
+                        {
+                            case "open":
+                                winId = p1id;
+                                btnP1.SetTextColor(Color.Aqua);
+                                btnP2.SetTextColor(Color.White);
+                                btnSave.Visibility = ViewStates.Visible;
+                                break;
+                            case "complete":
+                                AlertDialog.Builder dlgComp = new AlertDialog.Builder(Context);
+                                dlgComp.SetTitle(Context.GetString(Resource.String.dlgWarningCompleteMatchTitle));
+                                dlgComp.SetMessage(Context.GetString(Resource.String.dlgWarningCompleteMatchTxt));
+                                dlgComp.SetPositiveButton(Context.GetString(Resource.String.ok), delegate
+                                    {
+                                        winId = p1id;
+                                        btnP1.SetTextColor(Color.Aqua);
+                                        btnP2.SetTextColor(Color.White);
+                                        btnSave.Visibility = ViewStates.Visible;
+                                        return;
+                                    });
+                                dlgComp.SetNegativeButton(Context.GetString(Resource.String.cancel), delegate
+                                    {
+                                        return;
+                                    });
+                                dlgComp.Show();
+                                break;
+                        }  
                     }
                 }
             }
@@ -325,32 +347,53 @@ namespace Challonger
 
                 if (gVar.boolTournamentEditModeEnabled)
                 {
-                    switch (state)
+                    if (p2s <= p1s)
                     {
-                        case "open":
-                            winId = p2id;
-                            btnP2.SetTextColor(Color.Aqua);
-                            btnP1.SetTextColor(Color.White);
-                            btnSave.Visibility = ViewStates.Visible;
-                            break;
-                        case "complete":
-                            AlertDialog.Builder dlgComp = new AlertDialog.Builder(Context);
-                            dlgComp.SetTitle(Context.GetString(Resource.String.dlgWarningCompleteMatchTitle));
-                            dlgComp.SetMessage(Context.GetString(Resource.String.dlgWarningCompleteMatchTxt));
-                            dlgComp.SetPositiveButton(Context.GetString(Resource.String.ok), delegate
-                                {
-                                    winId = p2id;
-                                    btnP2.SetTextColor(Color.Aqua);
-                                    btnP1.SetTextColor(Color.White);
-                                    btnSave.Visibility = ViewStates.Visible;
-                                    return;
-                                });
-                            dlgComp.SetNegativeButton(Context.GetString(Resource.String.cancel), delegate
-                                {
-                                    return;
-                                });
-                            dlgComp.Show();
-                            break;
+                        AlertDialog.Builder dlgWarningScores = new AlertDialog.Builder(Context);
+                        dlgWarningScores.SetTitle(Context.GetString(Resource.String.warning));
+                        dlgWarningScores.SetMessage(Context.GetString(Resource.String.dlgWarningScores));
+                        dlgWarningScores.SetPositiveButton(Context.GetString(Resource.String.ok), delegate
+                            {
+                                winId = p2id;
+                                btnP2.SetTextColor(Color.Aqua);
+                                btnP1.SetTextColor(Color.White);
+                                btnSave.Visibility = ViewStates.Visible;
+                            });
+                        dlgWarningScores.SetNegativeButton(Context.GetString(Resource.String.cancel), delegate
+                            {
+                                return;
+                            });
+                        dlgWarningScores.Show();
+                    }
+                    else
+                    {
+                        switch (state)
+                        {
+                            case "open":
+                                winId = p2id;
+                                btnP2.SetTextColor(Color.Aqua);
+                                btnP1.SetTextColor(Color.White);
+                                btnSave.Visibility = ViewStates.Visible;
+                                break;
+                            case "complete":
+                                AlertDialog.Builder dlgComp = new AlertDialog.Builder(Context);
+                                dlgComp.SetTitle(Context.GetString(Resource.String.dlgWarningCompleteMatchTitle));
+                                dlgComp.SetMessage(Context.GetString(Resource.String.dlgWarningCompleteMatchTxt));
+                                dlgComp.SetPositiveButton(Context.GetString(Resource.String.ok), delegate
+                                    {
+                                        winId = p2id;
+                                        btnP2.SetTextColor(Color.Aqua);
+                                        btnP1.SetTextColor(Color.White);
+                                        btnSave.Visibility = ViewStates.Visible;
+                                        return;
+                                    });
+                                dlgComp.SetNegativeButton(Context.GetString(Resource.String.cancel), delegate
+                                    {
+                                        return;
+                                    });
+                                dlgComp.Show();
+                                break;
+                        }
                     }
                 }
             }

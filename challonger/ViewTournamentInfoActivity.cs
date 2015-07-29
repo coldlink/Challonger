@@ -289,6 +289,11 @@ namespace Challonger
                                 dlg0.Show();
                                 break;
                             case 1:
+                                var dialog = EditTournamentStateDialog.Initalize(jsonTournament, this);
+                                gVar.lastViewTournamentInfoTabSelected = ActionBar.SelectedNavigationIndex;
+                                dialog.Show(FragmentManager, "dialog");
+                                break;
+                            case 2:
                                 AlertDialog.Builder dlg1 = new AlertDialog.Builder(this);
                                 dlg1.SetTitle(this.GetString(Resource.String.editTournamentGame));
                                 dlg1.SetMessage(this.GetString(Resource.String.editTournamentGameMsg));
@@ -308,7 +313,7 @@ namespace Challonger
                                     });
                                 dlg1.Show();
                                 break;
-                            case 2:
+                            case 3:
                                 if (jsonTournament["state"] != "pending")
                                     Toast.MakeText(this, Resource.String.tstEditType, ToastLength.Long).Show();
                                 else
@@ -318,7 +323,7 @@ namespace Challonger
                                     dialog2.Show(FragmentManager, "dialog");
                                 }
                                 break;
-                            case 3:
+                            case 4:
                                 AlertDialog.Builder dlg3 = new AlertDialog.Builder(this);
                                 dlg3.SetTitle(this.GetString(Resource.String.editTournamentDescription));
                                 dlg3.SetMessage(this.GetString(Resource.String.editTournamentDescriptionMsg));
@@ -334,24 +339,47 @@ namespace Challonger
                                     });
                                 dlg3.SetNegativeButton(this.GetString(Resource.String.cancel), delegate
                                     {
-                                        Toast.MakeText(this, Resource.String.tstEditType, ToastLength.Long).Show();
                                         return;
                                     });
                                 dlg3.Show();
                                 break;
-                            case 4:
-                                Toast.MakeText(this, Resource.String.tstTournamentOrganisation, ToastLength.Long).Show();
-                                break;
                             case 5:
-                                ActionBar.SetSelectedNavigationItem(2);
+                                Toast.MakeText(this, Resource.String.tstTournamentOrganisation, ToastLength.Long).Show();
                                 break;
                             case 6:
+                                ActionBar.SetSelectedNavigationItem(2);
+                                break;
+                            case 7:
                                 Toast.MakeText(this, Resource.String.tstTournamentOrganisation, ToastLength.Long).Show();
                                 break;
-                            case 8:
-                                var dialog = EditTournamentStateDialog.Initalize(jsonTournament, this);
-                                gVar.lastViewTournamentInfoTabSelected = ActionBar.SelectedNavigationIndex;
-                                dialog.Show(FragmentManager, "dialog");
+                            case 11:
+                                AlertDialog.Builder dlg11 = new AlertDialog.Builder(this);
+                                dlg11.SetTitle(this.GetString(Resource.String.editTournamentCap));
+                                dlg11.SetMessage(this.GetString(Resource.String.editTournamentCapMsg));
+                                EditText name11 = new EditText(this);
+                                name11.InputType = InputTypes.ClassNumber;
+                                if (jsonTournament["signup_cap"] != null)
+                                    name11.Text = jsonTournament["signup_cap"].ToString();
+                                else
+                                    name11.Text = "";
+                                dlg11.SetView(name11);
+                                dlg11.SetPositiveButton(this.GetString(Resource.String.ok), delegate
+                                    {
+                                        string jsonPut;
+                                        if (name11.Text != "" && name11.Text != "0")
+                                            jsonPut = "{\"tournament\":{\"signup_cap\": " + name11.Text + "}}";
+                                        else
+                                            jsonPut = "{\"tournament\":{\"signup_cap\": null}}";
+
+                                        gVar.lastViewTournamentInfoTabSelected = ActionBar.SelectedNavigationIndex;
+                                        dlgEditTournamentInfo(jsonPut);
+                                        return;
+                                    });
+                                dlg11.SetNegativeButton(this.GetString(Resource.String.cancel), delegate
+                                    {
+                                        return;
+                                    });
+                                dlg11.Show();
                                 break;
                         }
                         break;
@@ -376,7 +404,7 @@ namespace Challonger
                 case 0:
                     switch (e.Position)
                     {
-                        case 4:
+                        case 5:
                             if (jsonTournament["subdomain"] != null)
                             {
                                 var intent4 = new Intent(this, typeof(TournamentListActivity));
@@ -385,12 +413,12 @@ namespace Challonger
                                 StartActivity(intent4);
                             }
                             break;
-                        case 6:
+                        case 7:
                             var uri = Android.Net.Uri.Parse(jsonTournament["full_challonge_url"]);
                             var intent6 = new Intent(Intent.ActionView, uri);
                             StartActivity(intent6);
                             break;
-                        case 7:
+                        case 8:
                             var intent7 = new Intent(this, typeof(TournamentLiveImageActivity));
 
                             string iurl = "http://images.challonge.com/";
@@ -402,7 +430,7 @@ namespace Challonger
                             intent7.PutExtra("url", iurl);
                             StartActivity(intent7);
                             break;
-                        case 9:
+                        case 10:
                             var uri9 = Android.Net.Uri.Parse(jsonTournament["sign_up_url"]);
                             var intent9 = new Intent(Intent.ActionView, uri9);
                             StartActivity(intent9);
@@ -415,6 +443,9 @@ namespace Challonger
         void PopulateItemsInfo()
         {
             itemsInfo.Add(new TournamentInfo(jsonTournament["name"], this.GetString(Resource.String.viewTournamentInfo_Info_name)));
+
+            string state = jsonTournament["state"];
+            itemsInfo.Add(new TournamentInfo(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(state), this.GetString(Resource.String.viewTournamentInfo_State)));
 
             if (jsonTournament["game_name"] == null)
                 itemsInfo.Add(new TournamentInfo("N/A", this.GetString(Resource.String.viewTournamentInfo_Info_gameName)));
@@ -438,8 +469,6 @@ namespace Challonger
             itemsInfo.Add(new TournamentInfo(jsonTournament["full_challonge_url"], this.GetString(Resource.String.viewTournamentInfo_Info_fullURL)));
             itemsInfo.Add(new TournamentInfo(this.GetString(Resource.String.viewTournamentInfo_LiveImage), this.GetString(Resource.String.viewTournamentInfo_LiveImageClick)));
 
-            string state = jsonTournament["state"];
-            itemsInfo.Add(new TournamentInfo(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(state), this.GetString(Resource.String.viewTournamentInfo_State)));
 
             if (jsonTournament["sign_up_url"] != null)
                 itemsInfo.Add(new TournamentInfo(jsonTournament["sign_up_url"], this.GetString(Resource.String.viewTournamentInfo_Signup)));

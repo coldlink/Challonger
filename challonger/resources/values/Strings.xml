@@ -76,7 +76,7 @@
 	<string name="viewTournamentInfo_Info_gameName">Game Name</string>
 	<string name="viewTournamentInfo_LiveImage">Live tournament image</string>
 	<string name="viewTournamentInfo_LiveImageClick">Click to view</string>
-	<string name="viewTournamentInfo_State">State</string>
+	<string name="viewTournamentInfo_State">Tournament Status</string>
 	<string name="viewTournamentInfo_Signup">Sign up URL</string>
     <string name="viewTournamentInfo_3rdPlace">3rd place match included</string>
     <string name="viewTournamentInfoCap">Sign up cap</string>

@@ -25,6 +25,7 @@ using Android.Hardware;
 using Android.Text;
 using System.Threading.Tasks;
 using Android.Nfc.Tech;
+using System.Globalization;
 
 namespace Challonger
 {
@@ -420,7 +421,8 @@ namespace Challonger
             else
                 itemsInfo.Add(new TournamentInfo(jsonTournament["game_name"], this.GetString(Resource.String.viewTournamentInfo_Info_gameName)));
 
-            itemsInfo.Add(new TournamentInfo(jsonTournament["tournament_type"], this.GetString(Resource.String.viewTournamentInfo_Info_type)));
+            string type = jsonTournament["tournament_type"];
+            itemsInfo.Add(new TournamentInfo(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(type), this.GetString(Resource.String.viewTournamentInfo_Info_type)));
 
             if (jsonTournament["description"] != "")
                 itemsInfo.Add(new TournamentInfo(jsonTournament["description"], this.GetString(Resource.String.viewTournamentInfo_Info_description)));
@@ -435,7 +437,9 @@ namespace Challonger
             itemsInfo.Add(new TournamentInfo(jsonTournament["participants_count"].ToString(), this.GetString(Resource.String.viewTournamentInfo_Info_participantCount)));
             itemsInfo.Add(new TournamentInfo(jsonTournament["full_challonge_url"], this.GetString(Resource.String.viewTournamentInfo_Info_fullURL)));
             itemsInfo.Add(new TournamentInfo(this.GetString(Resource.String.viewTournamentInfo_LiveImage), this.GetString(Resource.String.viewTournamentInfo_LiveImageClick)));
-            itemsInfo.Add(new TournamentInfo(jsonTournament["state"], this.GetString(Resource.String.viewTournamentInfo_State)));
+
+            string state = jsonTournament["state"];
+            itemsInfo.Add(new TournamentInfo(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(state), this.GetString(Resource.String.viewTournamentInfo_State)));
 
             if (jsonTournament["sign_up_url"] != null)
                 itemsInfo.Add(new TournamentInfo(jsonTournament["sign_up_url"], this.GetString(Resource.String.viewTournamentInfo_Signup)));

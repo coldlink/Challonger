@@ -1,4 +1,5 @@
 v1.0.2
+
 Bug Fixes:
 - Can no longer add participants to a capped tournament
 

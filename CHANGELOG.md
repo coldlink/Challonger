@@ -1,3 +1,11 @@
+v1.0.3
+
+Bug Fixes:
+- Clicking on the "Sign up url" where no url is present no longer crashes the app
+
+Changes/Additions:
+- Ability to edit whether a signup page is hosted by challonge through tournament view.
+
 v1.0.2
 
 Bug Fixes:

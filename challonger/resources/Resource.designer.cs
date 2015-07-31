@@ -489,50 +489,50 @@ namespace Challonger
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040094
-			public const int False = 2130968724;
+			// aapt resource value: 0x7f040098
+			public const int False = 2130968728;
 			
-			// aapt resource value: 0x7f040093
-			public const int True = 2130968723;
+			// aapt resource value: 0x7f040097
+			public const int True = 2130968727;
 			
 			// aapt resource value: 0x7f040000
 			public const int app_name = 2130968576;
 			
-			// aapt resource value: 0x7f040097
-			public const int btnAbout = 2130968727;
+			// aapt resource value: 0x7f04009b
+			public const int btnAbout = 2130968731;
 			
-			// aapt resource value: 0x7f040081
-			public const int btnAddParticipantInfo_Add = 2130968705;
+			// aapt resource value: 0x7f040084
+			public const int btnAddParticipantInfo_Add = 2130968708;
 			
 			// aapt resource value: 0x7f040015
 			public const int btnChangeAPI = 2130968597;
 			
-			// aapt resource value: 0x7f040080
-			public const int btnEditParticipantInfo_Delete = 2130968704;
+			// aapt resource value: 0x7f040083
+			public const int btnEditParticipantInfo_Delete = 2130968707;
 			
-			// aapt resource value: 0x7f04007f
-			public const int btnEditParticipantInfo_Save = 2130968703;
+			// aapt resource value: 0x7f040082
+			public const int btnEditParticipantInfo_Save = 2130968706;
 			
-			// aapt resource value: 0x7f040070
-			public const int btnEditTournamentState_Destroy = 2130968688;
+			// aapt resource value: 0x7f040073
+			public const int btnEditTournamentState_Destroy = 2130968691;
 			
-			// aapt resource value: 0x7f04006c
-			public const int btnEditTournamentState_Finalize = 2130968684;
+			// aapt resource value: 0x7f04006f
+			public const int btnEditTournamentState_Finalize = 2130968687;
 			
-			// aapt resource value: 0x7f04006e
-			public const int btnEditTournamentState_Reset = 2130968686;
+			// aapt resource value: 0x7f040071
+			public const int btnEditTournamentState_Reset = 2130968689;
 			
-			// aapt resource value: 0x7f04006a
-			public const int btnEditTournamentState_Start = 2130968682;
+			// aapt resource value: 0x7f04006d
+			public const int btnEditTournamentState_Start = 2130968685;
 			
 			// aapt resource value: 0x7f040052
 			public const int btnEditType = 2130968658;
 			
-			// aapt resource value: 0x7f040095
-			public const int btnHowToUse = 2130968725;
+			// aapt resource value: 0x7f040099
+			public const int btnHowToUse = 2130968729;
 			
-			// aapt resource value: 0x7f040088
-			public const int btnMatchInfoSave = 2130968712;
+			// aapt resource value: 0x7f04008c
+			public const int btnMatchInfoSave = 2130968716;
 			
 			// aapt resource value: 0x7f040033
 			public const int btnNewTournament_View = 2130968627;
@@ -582,14 +582,14 @@ namespace Challonger
 			// aapt resource value: 0x7f040035
 			public const int dlgAPIShort = 2130968629;
 			
-			// aapt resource value: 0x7f040089
-			public const int dlgWarningCompleteMatchTitle = 2130968713;
+			// aapt resource value: 0x7f04008d
+			public const int dlgWarningCompleteMatchTitle = 2130968717;
 			
-			// aapt resource value: 0x7f04008a
-			public const int dlgWarningCompleteMatchTxt = 2130968714;
+			// aapt resource value: 0x7f04008e
+			public const int dlgWarningCompleteMatchTxt = 2130968718;
 			
-			// aapt resource value: 0x7f04008b
-			public const int dlgWarningScores = 2130968715;
+			// aapt resource value: 0x7f04008f
+			public const int dlgWarningScores = 2130968719;
 			
 			// aapt resource value: 0x7f040037
 			public const int dlgtxtSubdomain = 2130968631;
@@ -621,26 +621,32 @@ namespace Challonger
 			// aapt resource value: 0x7f040059
 			public const int editTournamentNameMsg = 2130968665;
 			
+			// aapt resource value: 0x7f040064
+			public const int editTournamentOrganisation = 2130968676;
+			
+			// aapt resource value: 0x7f040066
+			public const int editTournamentOrganisationMsg = 2130968678;
+			
 			// aapt resource value: 0x7f040062
-			public const int editTournamentOrganisation = 2130968674;
+			public const int editTournamentSignup = 2130968674;
 			
 			// aapt resource value: 0x7f040063
-			public const int editTournamentOrganisationMsg = 2130968675;
-			
-			// aapt resource value: 0x7f040065
-			public const int editTournamentState = 2130968677;
+			public const int editTournamentSignupMsg = 2130968675;
 			
 			// aapt resource value: 0x7f040068
-			public const int editTournamentStateReset = 2130968680;
+			public const int editTournamentState = 2130968680;
 			
-			// aapt resource value: 0x7f040067
-			public const int editTournamentStateStart = 2130968679;
+			// aapt resource value: 0x7f04006b
+			public const int editTournamentStateReset = 2130968683;
+			
+			// aapt resource value: 0x7f04006a
+			public const int editTournamentStateStart = 2130968682;
 			
 			// aapt resource value: 0x7f04005c
 			public const int editTournamentTstSuccess = 2130968668;
 			
-			// aapt resource value: 0x7f040066
-			public const int editTournamentType = 2130968678;
+			// aapt resource value: 0x7f040069
+			public const int editTournamentType = 2130968681;
 			
 			// aapt resource value: 0x7f04005d
 			public const int editTournamentTypeTstSuccess = 2130968669;
@@ -672,23 +678,23 @@ namespace Challonger
 			// aapt resource value: 0x7f04003f
 			public const int searchResults = 2130968639;
 			
-			// aapt resource value: 0x7f04008f
-			public const int strLoserOf = 2130968719;
-			
-			// aapt resource value: 0x7f04008e
-			public const int strMatch = 2130968718;
-			
-			// aapt resource value: 0x7f04008d
-			public const int strRound = 2130968717;
+			// aapt resource value: 0x7f040093
+			public const int strLoserOf = 2130968723;
 			
 			// aapt resource value: 0x7f040092
-			public const int strState = 2130968722;
+			public const int strMatch = 2130968722;
 			
 			// aapt resource value: 0x7f040091
-			public const int strUsername = 2130968721;
+			public const int strRound = 2130968721;
 			
-			// aapt resource value: 0x7f040090
-			public const int strWinnerOf = 2130968720;
+			// aapt resource value: 0x7f040096
+			public const int strState = 2130968726;
+			
+			// aapt resource value: 0x7f040095
+			public const int strUsername = 2130968725;
+			
+			// aapt resource value: 0x7f040094
+			public const int strWinnerOf = 2130968724;
 			
 			// aapt resource value: 0x7f040005
 			public const int tabCreate = 2130968581;
@@ -723,53 +729,59 @@ namespace Challonger
 			// aapt resource value: 0x7f040053
 			public const int tstEditType = 2130968659;
 			
-			// aapt resource value: 0x7f04008c
-			public const int tstMatchSaved = 2130968716;
+			// aapt resource value: 0x7f040090
+			public const int tstMatchSaved = 2130968720;
 			
-			// aapt resource value: 0x7f040085
-			public const int tstParticipantAdd = 2130968709;
+			// aapt resource value: 0x7f04008b
+			public const int tstNoSignUpUrl = 2130968715;
 			
-			// aapt resource value: 0x7f040087
-			public const int tstParticipantCap = 2130968711;
+			// aapt resource value: 0x7f040088
+			public const int tstParticipantAdd = 2130968712;
 			
-			// aapt resource value: 0x7f040083
-			public const int tstParticipantDestroy = 2130968707;
+			// aapt resource value: 0x7f04008a
+			public const int tstParticipantCap = 2130968714;
 			
 			// aapt resource value: 0x7f040086
-			public const int tstParticipantNoName = 2130968710;
+			public const int tstParticipantDestroy = 2130968710;
 			
-			// aapt resource value: 0x7f040084
-			public const int tstParticipantSave = 2130968708;
+			// aapt resource value: 0x7f040089
+			public const int tstParticipantNoName = 2130968713;
+			
+			// aapt resource value: 0x7f040087
+			public const int tstParticipantSave = 2130968711;
 			
 			// aapt resource value: 0x7f040016
 			public const int tstSaveAPI = 2130968598;
 			
+			// aapt resource value: 0x7f040077
+			public const int tstStateDestroy = 2130968695;
+			
+			// aapt resource value: 0x7f040075
+			public const int tstStateFinalize = 2130968693;
+			
+			// aapt resource value: 0x7f040076
+			public const int tstStateReset = 2130968694;
+			
 			// aapt resource value: 0x7f040074
-			public const int tstStateDestroy = 2130968692;
+			public const int tstStateStart = 2130968692;
 			
-			// aapt resource value: 0x7f040072
-			public const int tstStateFinalize = 2130968690;
+			// aapt resource value: 0x7f040067
+			public const int tstTournamentOrganisation = 2130968679;
 			
-			// aapt resource value: 0x7f040073
-			public const int tstStateReset = 2130968691;
-			
-			// aapt resource value: 0x7f040071
-			public const int tstStateStart = 2130968689;
-			
-			// aapt resource value: 0x7f040064
-			public const int tstTournamentOrganisation = 2130968676;
+			// aapt resource value: 0x7f040065
+			public const int tstTournamentSignup = 2130968677;
 			
 			// aapt resource value: 0x7f04000b
 			public const int txtAPIKey = 2130968587;
 			
-			// aapt resource value: 0x7f040098
-			public const int txtAbout = 2130968728;
+			// aapt resource value: 0x7f04009c
+			public const int txtAbout = 2130968732;
 			
-			// aapt resource value: 0x7f040076
-			public const int txtAddParticipantInfo = 2130968694;
+			// aapt resource value: 0x7f040079
+			public const int txtAddParticipantInfo = 2130968697;
 			
-			// aapt resource value: 0x7f040082
-			public const int txtAddParticipantInfoSeed = 2130968706;
+			// aapt resource value: 0x7f040085
+			public const int txtAddParticipantInfoSeed = 2130968709;
 			
 			// aapt resource value: 0x7f04000a
 			public const int txtCopyPaste = 2130968586;
@@ -813,50 +825,50 @@ namespace Challonger
 			// aapt resource value: 0x7f040013
 			public const int txtDotChallongeSlash = 2130968595;
 			
-			// aapt resource value: 0x7f040075
-			public const int txtEditParticipantInfo = 2130968693;
-			
-			// aapt resource value: 0x7f04007b
-			public const int txtEditParticipantInfoEmail = 2130968699;
-			
-			// aapt resource value: 0x7f04007c
-			public const int txtEditParticipantInfoEmail_Edit = 2130968700;
-			
-			// aapt resource value: 0x7f040077
-			public const int txtEditParticipantInfoName = 2130968695;
-			
 			// aapt resource value: 0x7f040078
-			public const int txtEditParticipantInfoName_Edit = 2130968696;
-			
-			// aapt resource value: 0x7f04007d
-			public const int txtEditParticipantInfoSeed = 2130968701;
+			public const int txtEditParticipantInfo = 2130968696;
 			
 			// aapt resource value: 0x7f04007e
-			public const int txtEditParticipantInfoSeed_Edit = 2130968702;
+			public const int txtEditParticipantInfoEmail = 2130968702;
 			
-			// aapt resource value: 0x7f040079
-			public const int txtEditParticipantInfoUserName = 2130968697;
+			// aapt resource value: 0x7f04007f
+			public const int txtEditParticipantInfoEmail_Edit = 2130968703;
 			
 			// aapt resource value: 0x7f04007a
-			public const int txtEditParticipantInfoUserName_Edit = 2130968698;
+			public const int txtEditParticipantInfoName = 2130968698;
 			
-			// aapt resource value: 0x7f04006f
-			public const int txtEditTournamentState_Destroy = 2130968687;
+			// aapt resource value: 0x7f04007b
+			public const int txtEditParticipantInfoName_Edit = 2130968699;
 			
-			// aapt resource value: 0x7f04006b
-			public const int txtEditTournamentState_Finalize = 2130968683;
+			// aapt resource value: 0x7f040080
+			public const int txtEditParticipantInfoSeed = 2130968704;
 			
-			// aapt resource value: 0x7f04006d
-			public const int txtEditTournamentState_Reset = 2130968685;
+			// aapt resource value: 0x7f040081
+			public const int txtEditParticipantInfoSeed_Edit = 2130968705;
 			
-			// aapt resource value: 0x7f040069
-			public const int txtEditTournamentState_Start = 2130968681;
+			// aapt resource value: 0x7f04007c
+			public const int txtEditParticipantInfoUserName = 2130968700;
+			
+			// aapt resource value: 0x7f04007d
+			public const int txtEditParticipantInfoUserName_Edit = 2130968701;
+			
+			// aapt resource value: 0x7f040072
+			public const int txtEditTournamentState_Destroy = 2130968690;
+			
+			// aapt resource value: 0x7f04006e
+			public const int txtEditTournamentState_Finalize = 2130968686;
+			
+			// aapt resource value: 0x7f040070
+			public const int txtEditTournamentState_Reset = 2130968688;
+			
+			// aapt resource value: 0x7f04006c
+			public const int txtEditTournamentState_Start = 2130968684;
 			
 			// aapt resource value: 0x7f040009
 			public const int txtGetAPI = 2130968585;
 			
-			// aapt resource value: 0x7f040096
-			public const int txtHowToUse = 2130968726;
+			// aapt resource value: 0x7f04009a
+			public const int txtHowToUse = 2130968730;
 			
 			// aapt resource value: 0x7f040010
 			public const int txtInfoSubdomain = 2130968592;

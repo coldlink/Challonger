@@ -65,7 +65,7 @@
 	<string name="errNoConnection">No internet connection detected. Please check connection and try again.</string>
 	<string name="searchResults">Search Results</string>
 	<string name="searchFound"> tournament(s) found:</string>
-	<string name="viewTournamentInfo_Info">Info</string>
+	<string name="viewTournamentInfo_Info">Information</string>
 	<string name="viewTournamentInfo_Matches">Matches</string>
 	<string name="viewTournamentInfo_Participants">Participants</string>
 	<string name="viewTournamentInfo_FinalRank">Final Rank</string>
@@ -96,9 +96,12 @@
 	<string name="editTournamentTypeTstSuccess">Tournament information changed!</string>
 	<string name="editTournamentDescription">Edit Tournament Description</string>
 	<string name="editTournamentDescriptionMsg">Enter the new tournament description:</string>
-		<string name="editTournamentCap">Edit Tournament sign up cap</string>
+	<string name="editTournamentCap">Edit Tournament sign up cap</string>
 	<string name="editTournamentCapMsg">Enter the new tournament sign up cap: (Leave blank or 0 for no sign up cap. Minimum cap is 4 players.)</string>
+	<string name="editTournamentSignup">Open tournament sign up</string>
+	<string name="editTournamentSignupMsg">Have Challonge host a sign-up page (otherwise, you manually add all participants)</string>
 	<string name="editTournamentOrganisation">Edit Tournament Organisation. Will change tournament url.</string>
+	<string name="tstTournamentSignup">Cannot edit sign up url on a started tournament.</string>
 	<string name="editTournamentOrganisationMsg">Enter the new organisation:</string>
 	<string name="tstTournamentOrganisation">Changing organisation or url currently not supported.</string>
 	<string name="editTournamentState">Edit Tournament State</string>
@@ -136,6 +139,7 @@
 	<string name="tstParticipantAdd">Participant added.</string>
 	<string name="tstParticipantNoName">No Display Name or Challonge Username is provided. At least one is required.</string>
 	<string name="tstParticipantCap">Participant cap reached. Cannot add new participant.</string>
+	<string name="tstNoSignUpUrl">No sign up url to open.</string>
 	<string name="btnMatchInfoSave">Save Match Information</string>
 	<string name="dlgWarningCompleteMatchTitle">Warning - Complete Match</string>
 	<string name="dlgWarningCompleteMatchTxt">WARNING: If you change the winner of a completed match, all matches in the bracket that branch from the updated match will be reset.</string>
@@ -152,5 +156,5 @@
 	<string name="btnHowToUse">How To Use</string>
 	<string name="txtHowToUse">How to use:\n\n• Add your API key to the "Settings" tab.\n\n• Find tournament through "Menu" tab.\n\n• Create tournament through "Create" tab.\n\n- Edit tournament info:\n• Click Menu button/icon ->" Enable Editing"\n• Long Click on tournament information item to edit.\n• Start/Reset/Finalize/Delete tournament by long clicking "State" item.\n\n- Update match:/n• Click Menu button/icon -> "Enable Editing"/n• Single click score to add 1. Long click score to minus 1.\n• Click on winning player -> Save Match Information.\n\n- Add participant (if tournament not started):\n• Click Menu button/icon -> "Enable Editing"\n• Click Menu button/icon -> Add participant\n\n- Edit/Remove participant:\n • Click Menu button/icon -> "Enable Editing"\n• Long click on participant.</string>
 	<string name="btnAbout">About</string>
-	<string name="txtAbout">Challonger v1.0.1\n\nUnofficial Challonge App for Android\n\nApp by Mahesh Makani (@coldlink_)\n\nSource: https://github.com/coldlink/challonger</string>
+	<string name="txtAbout">Challonger v1.0.3\n\nUnofficial Challonge App for Android\n\nApp by Mahesh Makani (@coldlink_)\n\nSource: https://github.com/coldlink/challonger</string>
 </resources>

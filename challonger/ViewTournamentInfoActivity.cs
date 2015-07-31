@@ -26,6 +26,7 @@ using Android.Text;
 using System.Threading.Tasks;
 using Android.Nfc.Tech;
 using System.Globalization;
+using Dalvik.SystemInterop;
 
 namespace Challonger
 {
@@ -352,6 +353,38 @@ namespace Challonger
                             case 7:
                                 Toast.MakeText(this, Resource.String.tstTournamentOrganisation, ToastLength.Long).Show();
                                 break;
+                            case 9:
+                                if (jsonTournament["state"] == "pending")
+                                {
+                                    AlertDialog.Builder dlg9 = new AlertDialog.Builder(this);
+                                    dlg9.SetTitle(this.GetString(Resource.String.editTournamentSignup));
+                                    CheckBox chk9 = new CheckBox(this);
+                                    chk9.Text = this.GetString(Resource.String.editTournamentSignupMsg);
+                                    if (jsonTournament["open_signup"] == true)
+                                        chk9.Checked = true;
+                                    else
+                                        chk9.Checked = false;
+                                    dlg9.SetView(chk9);
+                                    dlg9.SetPositiveButton(this.GetString(Resource.String.ok), delegate
+                                        {
+                                            string jsonPut;
+                                            if (chk9.Checked)
+                                                jsonPut = "{\"tournament\":{\"open_signup\": true}}";
+                                            else
+                                                jsonPut = "{\"tournament\":{\"open_signup\": false}}";
+
+                                            dlgEditTournamentInfo(jsonPut);
+                                            return;
+                                        });
+                                    dlg9.SetNegativeButton(this.GetString(Resource.String.cancel), delegate
+                                        {
+                                            return;
+                                        });
+                                    dlg9.Show();
+                                }
+                                else
+                                    Toast.MakeText(this, Resource.String.tstTournamentSignup, ToastLength.Long);
+                                break;
                             case 11:
                                 AlertDialog.Builder dlg11 = new AlertDialog.Builder(this);
                                 dlg11.SetTitle(this.GetString(Resource.String.editTournamentCap));
@@ -393,8 +426,6 @@ namespace Challonger
                         break;
                 }
             }
-
-		
         }
 
         void ListViewLayViewTournamentInfo_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -430,10 +461,15 @@ namespace Challonger
                             intent7.PutExtra("url", iurl);
                             StartActivity(intent7);
                             break;
-                        case 10:
-                            var uri9 = Android.Net.Uri.Parse(jsonTournament["sign_up_url"]);
-                            var intent9 = new Intent(Intent.ActionView, uri9);
-                            StartActivity(intent9);
+                        case 9:
+                            if (jsonTournament["sign_up_url"] != null)
+                            {    
+                                var uri9 = Android.Net.Uri.Parse(jsonTournament["sign_up_url"]);
+                                var intent9 = new Intent(Intent.ActionView, uri9);
+                                StartActivity(intent9);
+                            }
+                            else
+                                Toast.MakeText(this, Resource.String.tstNoSignUpUrl, ToastLength.Long).Show();
                             break;
                     }
                     break;

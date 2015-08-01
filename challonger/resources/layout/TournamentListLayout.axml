@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:layout_width="match_parent"
+    p1:layout_height="wrap_content"
+    p1:padding="5dp">
+    <TextView
+        p1:text="Tournament Name"
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/txtTournamentListName"
+        p1:textStyle="italic" />
+    <LinearLayout
+        p1:orientation="horizontal"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content">
+        <TextView
+            p1:text="128"
+            p1:textAppearance="?android:attr/textAppearanceLarge"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:id="@+id/txtTournamentListCount"
+            p1:layout_gravity="left"
+            p1:layout_weight="1"
+            p1:gravity="center" />
+        <TextView
+            p1:text="DE"
+            p1:textAppearance="?android:attr/textAppearanceLarge"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:id="@+id/txtTournamentViewType"
+            p1:layout_gravity="center_horizontal"
+            p1:layout_weight="1"
+            p1:gravity="center" />
+        <ImageView
+            p1:src="@drawable/ic_tournament_complete"
+            p1:layout_width="48dp"
+            p1:layout_height="48dp"
+            p1:id="@+id/imgTournamentViewState"
+            p1:layout_gravity="right"
+            p1:layout_weight="1"
+            p1:scaleType="fitCenter" />
+    </LinearLayout>
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/progTournamentView" />
+</LinearLayout>

@@ -54,10 +54,22 @@ namespace Challonger
 			public const int ic_launcher = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int ic_refresh_white_48dp = 2130837507;
+			public const int ic_pending = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int Icon = 2130837508;
+			public const int ic_refresh_white_48dp = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int ic_tournament_awaiting_review = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int ic_tournament_complete = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int ic_tournament_inprogress = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int Icon = 2130837512;
 			
 			static Drawable()
 			{
@@ -81,14 +93,14 @@ namespace Challonger
 			// aapt resource value: 0x7f070048
 			public const int ViewColorPickerHelper1 = 2131165256;
 			
-			// aapt resource value: 0x7f07006c
-			public const int ViewTournamentInfoMenuAddParticipant = 2131165292;
+			// aapt resource value: 0x7f070071
+			public const int ViewTournamentInfoMenuAddParticipant = 2131165297;
 			
-			// aapt resource value: 0x7f07006b
-			public const int ViewTournamentInfoMenuEdit = 2131165291;
+			// aapt resource value: 0x7f070070
+			public const int ViewTournamentInfoMenuEdit = 2131165296;
 			
-			// aapt resource value: 0x7f07006a
-			public const int ViewTournamentInfoMenuRefresh = 2131165290;
+			// aapt resource value: 0x7f07006f
+			public const int ViewTournamentInfoMenuRefresh = 2131165295;
 			
 			// aapt resource value: 0x7f070044
 			public const int btnAbout = 2131165252;
@@ -159,6 +171,9 @@ namespace Challonger
 			// aapt resource value: 0x7f070058
 			public const int imgParticipantView = 2131165272;
 			
+			// aapt resource value: 0x7f07006a
+			public const int imgTournamentViewState = 2131165290;
+			
 			// aapt resource value: 0x7f070000
 			public const int linLayAddTournamentState = 2131165184;
 			
@@ -175,13 +190,16 @@ namespace Challonger
 			public const int linMain = 2131165233;
 			
 			// aapt resource value: 0x7f070066
-			public const int linearLayoutTournament = 2131165286;
+			public const int listViewLayViewTournament = 2131165286;
 			
-			// aapt resource value: 0x7f070069
-			public const int listViewLayViewTournamentInfo = 2131165289;
+			// aapt resource value: 0x7f07006e
+			public const int listViewLayViewTournamentInfo = 2131165294;
 			
 			// aapt resource value: 0x7f070065
 			public const int progTournamentListActivityIndicator = 2131165285;
+			
+			// aapt resource value: 0x7f07006b
+			public const int progTournamentView = 2131165291;
 			
 			// aapt resource value: 0x7f070059
 			public const int progressBar = 2131165273;
@@ -231,8 +249,8 @@ namespace Challonger
 			// aapt resource value: 0x7f07002f
 			public const int relLayMainTab_tab1 = 2131165231;
 			
-			// aapt resource value: 0x7f070068
-			public const int relLayViewTournamentInfo_tab1 = 2131165288;
+			// aapt resource value: 0x7f07006d
+			public const int relLayViewTournamentInfo_tab1 = 2131165293;
 			
 			// aapt resource value: 0x7f070064
 			public const int responseView = 2131165284;
@@ -390,14 +408,23 @@ namespace Challonger
 			// aapt resource value: 0x7f07005a
 			public const int txtTournamentInfoTop = 2131165274;
 			
+			// aapt resource value: 0x7f070068
+			public const int txtTournamentListCount = 2131165288;
+			
+			// aapt resource value: 0x7f070067
+			public const int txtTournamentListName = 2131165287;
+			
+			// aapt resource value: 0x7f070069
+			public const int txtTournamentViewType = 2131165289;
+			
 			// aapt resource value: 0x7f07003c
 			public const int txtURL = 2131165244;
 			
 			// aapt resource value: 0x7f070032
 			public const int txtWelcome = 2131165234;
 			
-			// aapt resource value: 0x7f070067
-			public const int webTournamentLiveImage = 2131165287;
+			// aapt resource value: 0x7f07006c
+			public const int webTournamentLiveImage = 2131165292;
 			
 			static Id()
 			{
@@ -455,10 +482,13 @@ namespace Challonger
 			public const int TournamentList = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int TournamentLiveImage = 2130903054;
+			public const int TournamentListLayout = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int ViewTournamentInfo = 2130903055;
+			public const int TournamentLiveImage = 2130903055;
+			
+			// aapt resource value: 0x7f030010
+			public const int ViewTournamentInfo = 2130903056;
 			
 			static Layout()
 			{

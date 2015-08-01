@@ -61,6 +61,7 @@
     <Compile Include="Code\TournamentInfoCustomRow.cs" />
     <Compile Include="CreateTournmaneDialog.cs" />
     <Compile Include="MainActivityTab.cs" />
+    <Compile Include="Code\TournamentListCustomRow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -113,6 +114,27 @@
     <AndroidResource Include="Resources\layout\MainTabLayout_Main.axml" />
     <AndroidResource Include="Resources\layout\MainTabLayout_Settings.axml" />
     <AndroidResource Include="Resources\layout\EditTournamentTypeLayout.axml" />
+    <AndroidResource Include="Resources\layout\TournamentListLayout.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_pending.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_pending.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_pending.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_pending.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_pending.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tournament_awaiting_review.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tournament_awaiting_review.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tournament_awaiting_review.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_tournament_awaiting_review.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_tournament_awaiting_review.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tournament_complete.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tournament_complete.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tournament_complete.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_tournament_complete.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_tournament_complete.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tournament_inprogress.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tournament_inprogress.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tournament_inprogress.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_tournament_inprogress.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_tournament_inprogress.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

@@ -31,6 +31,9 @@ namespace Challonger
             AddTab(Resource.String.tabCreate, new CreateTabFragment(this));
             AddTab(Resource.String.tabSettings, new SettingsTabFragment(this));
 
+            //testing tab for layouts - not used
+            //AddTab(Resource.String.tabSettings, new TestTabFragment(this));
+
             LoadPreferences();
             if (gVar.apiKey_ == "")
             {
@@ -476,6 +479,26 @@ namespace Challonger
                         });
                     dlgAbout.Show();
                 };
+
+                return view;
+            }
+        }
+
+        //testing tab for layouts - not used
+        class TestTabFragment : Fragment
+        {
+            Activity context;
+
+            public TestTabFragment(Activity _context)
+            {
+                context = _context;
+            }
+
+            public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+            {
+                base.OnCreateView(inflater, container, savedInstanceState);
+
+                var view = inflater.Inflate(Resource.Layout.TournamentListLayout, container, false);
 
                 return view;
             }

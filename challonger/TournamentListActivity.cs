@@ -103,45 +103,6 @@ namespace Challonger
             int count = json.Count;
             responseView.Text = count + " " + this.GetString(Resource.String.searchFound);
 
-            /* for (int i = 0; i < count; i++) {
-                JsonValue tournament;
-
-                if (flagSingle)
-					tournament = json ["tournament"];
-				else {
-					JsonValue getTournament = json [i];
-					tournament = getTournament ["tournament"];	
-				}
-				LinearLayout.LayoutParams layParams = new LinearLayout.LayoutParams (LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
-				Button btn = new Button (this);
-				btn.Id = i;
-				btn.Text = tournament ["name"];
-				linLay.AddView (btn, layParams);
-
-				Button btn1 = ((Button)FindViewById<Button> (i));
-
-                //disabled swiss type and 2 stage tournaments
-                if (tournament ["group_stages_enabled"] || tournament["tournament_type"] == "swiss")
-                    btn1.Enabled = false;
-
-				btn1.Click += (object sender, EventArgs e) => {
-					string url = gVar.URL_ + "tournaments/";
-					if (tournament ["subdomain"] != null) {
-						url += tournament ["subdomain"] + "-" + tournament ["url"] + ".json?" + "api_key=" + gVar.apiKey_ + "&include_participants=1&include_matches=1";
-					} else {
-						url += tournament ["url"] + ".json?" + "api_key=" + gVar.apiKey_ + "&include_participants=1&include_matches=1";
-					}
-
-					var intent = new Intent (this, typeof(ViewTournamentInfoActivity));
-
-					intent.PutExtra ("url", url);
-					gVar.boolTournamentEditModeEnabled = false;
-					gVar.lastViewTournamentInfoTabSelected = 0;
-					this.Finish ();
-					StartActivity (intent);
-				};
-			}*/
-
             for (int i = 0; i < count; i++)
             {
                 JsonValue tournament;
@@ -207,8 +168,6 @@ namespace Challonger
             this.Finish();
             StartActivity(intent);
         }
-
-
     }
 }
 

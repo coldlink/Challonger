@@ -22,8 +22,8 @@
             p1:layout_height="match_parent"
             p1:id="@+id/txtTournamentListCount"
             p1:layout_gravity="left"
-            p1:layout_weight="1"
-            p1:gravity="center" />
+            p1:layout_weight="0.34"
+            p1:gravity="left|center_vertical" />
         <TextView
             p1:text="DE"
             p1:textAppearance="?android:attr/textAppearanceLarge"
@@ -31,7 +31,7 @@
             p1:layout_height="match_parent"
             p1:id="@+id/txtTournamentViewType"
             p1:layout_gravity="center_horizontal"
-            p1:layout_weight="1"
+            p1:layout_weight="0.33"
             p1:gravity="center" />
         <ImageView
             p1:src="@drawable/ic_tournament_complete"
@@ -39,8 +39,11 @@
             p1:layout_height="48dp"
             p1:id="@+id/imgTournamentViewState"
             p1:layout_gravity="right"
-            p1:layout_weight="1"
-            p1:scaleType="fitCenter" />
+            p1:layout_weight="0.33"
+            p1:gravity="right"
+            p1:scaleType="fitEnd"
+            p1:layout_marginLeft="0.0dp"
+            p1:layout_marginRight="0.0dp" />
     </LinearLayout>
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"

@@ -7,14 +7,14 @@
     android:id="@+id/linMain">
     <TextView
         android:text="@string/txtGetAPI"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:id="@+id/txtGetAPI" />
     <TextView
         android:text="@string/txtCopyPaste"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
@@ -32,19 +32,27 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:id="@+id/btnSaveAPIKey" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
-    <Button
-        android:text="@string/btnHowToUse"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
-        android:id="@+id/btnHowToUse" />
-    <Button
-        android:text="@string/btnAbout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
-        android:id="@+id/btnAbout" />
+        android:layout_gravity="bottom"
+        android:layout_weight="1">
+        <Button
+            android:text="@string/btnHowToUse"
+            android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/btnHowToUse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="bottom" />
+        <Button
+            android:text="@string/btnAbout"
+            android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/btnAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1" />
+    </LinearLayout>
 </LinearLayout>

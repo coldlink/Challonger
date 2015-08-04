@@ -23,10 +23,10 @@
 	<string name="btnSaveAPIKey">Save API Key</string>
 	<string name="btnChangeAPI">Change API Key</string>
 	<string name="tstSaveAPI">API Key saved</string>
-	<string name="txtSpinnerText">Choose an option:</string>
-  <string name="txtMainView">View created tournaments.</string>
-  <string name="txtMainSub">View list of tournaments from organisation.</string>
-  <string name="txtMainURL" >View a tournament from a Challonge URL.</string>
+	<string name="txtSpinnerText">View tournaments from:</string>
+  <string name="txtMainView">Created</string>
+  <string name="txtMainSub">Organisation/Subdomain</string>
+  <string name="txtMainURL">Challonge URL</string>
   <string name="txtCreateTournament_Title">Create New Tournament</string>
   <string name="txtCreateTournament_Name">Your event\'s name/title (Max: 60 characters)</string>
   <string name="txtCreateTournament_Name_Edit">Event name - (Required)</string>

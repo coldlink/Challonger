@@ -18,84 +18,10 @@
         android:padding="5dp"
         android:layout_height="wrap_content"
         android:id="@+id/txtSpinnerText" />
-    <RadioGroup
+    <ExpandableListView
         android:minWidth="25px"
         android:minHeight="25px"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/radMain">
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/txtMainView"
-            android:id="@+id/radMainView" />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txtMainSub"
-            android:id="@+id/radMainSub" />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txtMainURL"
-            android:id="@+id/radMainURL" />
-    </RadioGroup>
-    <TextView
-        android:text="@string/txtInfoSubdomain"
-        android:padding="5dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtInfoSubdomain" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:id="@+id/txtSubdomain"
-        android:hint="@string/txtSubdomain"
-        android:inputType="text" />
-    <TextView
-        android:text="@string/txtInfoURL"
-        android:padding="5dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtInfoURL" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:padding="5dp"
-        android:layout_height="wrap_content">
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/txtSubdomainURL"
-            android:hint="@string/txtSubdomainURL"
-            android:layout_weight="0.5"
-            android:padding="5dp"
-            android:layout_gravity="right"
-            android:inputType="text" />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/txtURL"
-            android:padding="5dp"
-            android:hint="@string/txtURL"
-            android:layout_weight="1"
-            android:layout_gravity="left"
-            android:inputType="text" />
-    </LinearLayout>
-    <Button
-        android:text="@string/btnSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnSearch" />
-    <Space
-        android:layout_width="match_parent"
-        android:padding="5dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/space1"
-        android:layout_gravity="bottom"
-        android:layout_weight="1" />
+        android:id="@+id/listViewTest" />
 </LinearLayout>

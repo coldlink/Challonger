@@ -62,6 +62,7 @@
     <Compile Include="CreateTournmaneDialog.cs" />
     <Compile Include="MainActivityTab.cs" />
     <Compile Include="Code\TournamentListCustomRow.cs" />
+    <Compile Include="Code\ExpandableListAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -135,6 +136,18 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_tournament_inprogress.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_tournament_inprogress.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_tournament_inprogress.png" />
+    <AndroidResource Include="Resources\layout\MainMenuExpandableListChildLayout.axml" />
+    <AndroidResource Include="Resources\layout\MainMenuExpandableListParentLayout.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_expand_less_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_expand_less_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_expand_less_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_expand_less_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_expand_less_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_expand_more_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_expand_more_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_expand_more_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_expand_more_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_expand_more_white_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

@@ -13,6 +13,7 @@ using Android.Content.PM;
 using Android.Net;
 using System.Json;
 using System.Net;
+using Android.Graphics;
 
 namespace Challonger
 {
@@ -68,7 +69,8 @@ namespace Challonger
             ActionBar.AddTab(tab);
         }
 
-        class MainTabFragment : Fragment
+        //Old Main Menu Layout
+        /* class MainTabFragment : Fragment
         {
             Activity context;
 
@@ -231,6 +233,35 @@ namespace Challonger
                     }
                 };
 
+                return view;
+            }
+        }*/
+
+        class MainTabFragment : Fragment
+        {
+            Activity context;
+
+            public MainTabFragment(Activity _context)
+            {
+                context = _context;
+            }
+
+            public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+            {
+                base.OnCreateView(inflater, container, savedInstanceState);
+
+                List<MainMenuData> listData = new List<MainMenuData>();
+
+                for (int i = 0; i < 3; i++)
+                {
+                    listData.Add(new MainMenuData(i));
+                }
+
+                var view = inflater.Inflate(Resource.Layout.MainTabLayout_Main, container, false);
+
+                ExpandableListView listView = view.FindViewById<ExpandableListView>(Resource.Id.listViewTest);
+                listView.SetAdapter(new MainMenuExpandableListAdapter(context, listData));
+                listView.DescendantFocusability = DescendantFocusability.AfterDescendants;
                 return view;
             }
         }
@@ -498,8 +529,16 @@ namespace Challonger
             {
                 base.OnCreateView(inflater, container, savedInstanceState);
 
-                var view = inflater.Inflate(Resource.Layout.TournamentListLayout, container, false);
+                List<MainMenuData> listData = new List<MainMenuData>();
 
+                for (int i = 0; i < 3; i++)
+                {
+                    listData.Add(new MainMenuData(i));
+                }
+
+                var view = inflater.Inflate(Resource.Layout.MainTabLayout, container, false);
+                var listView = context.FindViewById<ExpandableListView>(Resource.Id.listViewTest);
+                listView.SetAdapter(new MainMenuExpandableListAdapter(context, listData));
                 return view;
             }
         }
@@ -519,6 +558,227 @@ namespace Challonger
             var prefs = context.GetSharedPreferences("Challonger.preferences", FileCreationMode.Private);
             var editor = prefs.Edit();
             editor.PutString("api_key", api_key).Commit();
+        }
+    }
+
+    public class MainMenuData
+    {
+        public int id { get; set; }
+
+        public MainMenuData(int _id)
+        {
+            id = _id;
+        }
+    }
+
+    public class MainMenuExpandableListAdapter : BaseExpandableListAdapter
+    {
+        protected Activity context;
+        protected List<MainMenuData> listData;
+
+        public MainMenuExpandableListAdapter(Activity _context, List<MainMenuData> _list)
+            : base()
+        {
+            context = _context;
+            listData = _list;
+        }
+
+        public override Java.Lang.Object GetChild(int groupPosition, int childPosition)
+        {
+            return null;
+        }
+
+        public override long GetChildId(int groupPosition, int childPosition)
+        {
+            return childPosition;
+        }
+
+        public override int GetChildrenCount(int groupPosition)
+        {
+            return 1;
+        }
+
+        public override View GetChildView(int groupPosition, int childPosition, bool isLastChild, View convertView, ViewGroup parent)
+        {
+            ChildViewHolder cvh;
+            var view = convertView;
+
+            if (view == null)
+            {
+                view = context.LayoutInflater.Inflate(Resource.Layout.MainMenuExpandableListChildLayout, parent, false);
+                cvh = new ChildViewHolder();
+                cvh.Initalize(view);
+                view.Tag = cvh;
+            }
+
+            var item = listData[groupPosition];
+            cvh = (ChildViewHolder)view.Tag;
+            cvh.Bind(context, item.id);
+
+            return view;
+        }
+
+        public override Java.Lang.Object GetGroup(int groupPosition)
+        {
+            return null;   
+        }
+
+        public override long GetGroupId(int groupPosition)
+        {
+            return groupPosition;
+        }
+
+        public override View GetGroupView(int groupPosition, bool isExpanded, View convertView, ViewGroup parent)
+        {
+            var view = convertView;
+
+            if (view == null)
+            {
+                var inflater = context.GetSystemService(Context.LayoutInflaterService) as LayoutInflater;
+                view = inflater.Inflate(Resource.Layout.MainMenuExpandableListParentLayout, null);
+            }
+
+            //set up paernt view
+            switch (groupPosition)
+            {
+                case 0:
+                    view.FindViewById<TextView>(Resource.Id.txtExpandableTestParent).Text = context.GetString(Resource.String.txtMainView);
+                    break;
+                case 1:
+                    view.FindViewById<TextView>(Resource.Id.txtExpandableTestParent).Text = context.GetString(Resource.String.txtMainSub);
+                    break;
+                case 2:
+                    view.FindViewById<TextView>(Resource.Id.txtExpandableTestParent).Text = context.GetString(Resource.String.txtMainURL);
+                    break;
+            }     
+
+            return view;
+        }
+
+        public override bool IsChildSelectable(int groupPosition, int childPosition)
+        {
+            return true;
+        }
+
+        public override bool HasStableIds
+        {
+            get{ return true; }
+        }
+
+        public override int GroupCount
+        {
+            get{ return listData.Count; }
+        }
+
+        private class ChildViewHolder : Java.Lang.Object
+        {
+            Activity context;
+            TextView txtInfo;
+            EditText txtSub;
+            EditText txtSub0;
+            EditText txtUrl;
+            Button btnSearch;
+
+            int position;
+
+            public void Initalize(View view)
+            {
+                txtInfo = view.FindViewById<TextView>(Resource.Id.txtInfoSubdomain);
+                txtSub = view.FindViewById<EditText>(Resource.Id.txtSubdomainURL);
+                txtSub0 = view.FindViewById<EditText>(Resource.Id.txtSubdomain);
+                txtUrl = view.FindViewById<EditText>(Resource.Id.txtURL);
+                btnSearch = view.FindViewById<Button>(Resource.Id.btnSearch);
+
+                btnSearch.Click += new EventHandler(this.btnSearch_Click);
+            }
+
+            void btnSearch_Click(object sender, EventArgs e)
+            {
+                var intent = new Intent(context, typeof(TournamentListActivity));
+                string url = gVar.URL_;
+
+                switch (position)
+                {
+                    case 0:
+                        url += "tournaments.json?" + "api_key=" + gVar.apiKey_;
+                        intent.PutExtra("url", url);
+                        context.StartActivity(intent);
+                        break;
+                    case 1:
+                        if (txtSub0.Text == "")
+                        {
+                            var dlgtxtSubdomain = new AlertDialog.Builder(context);
+                            dlgtxtSubdomain.SetMessage(Resource.String.dlgtxtSubdomain);
+                            dlgtxtSubdomain.SetNegativeButton(Resource.String.ok, delegate
+                                {
+                                    return;
+                                });
+                            dlgtxtSubdomain.Show();
+                        }
+                        else
+                        {
+                            url += "tournaments.json?" + "api_key=" + gVar.apiKey_ + "&subdomain=" + txtSub0.Text;
+                            intent.PutExtra("url", url);
+                            context.StartActivity(intent);
+                        }
+                        break;
+                    case 2:
+                        if (txtUrl.Text == "")
+                        {
+                            var dlgtxtURL = new AlertDialog.Builder(context);
+                            dlgtxtURL.SetMessage(Resource.String.dlgtxtURL).SetNegativeButton(Resource.String.ok, delegate
+                                {
+                                }).Show();
+                        }
+                        else
+                        {
+                            url += "tournaments/";
+                            if (txtSub.Text != "")
+                                url += txtSub.Text + "-" + txtUrl.Text;
+                            else
+                                url += txtUrl.Text;
+                            url += ".json?" + "api_key=" + gVar.apiKey_;
+                            intent.PutExtra("url", url);
+                            intent.PutExtra("flag", true);
+                            context.StartActivity(intent);
+                        }
+                        break;
+                }
+            }
+
+            public void Bind(Activity _context, int _position)
+            {
+                context = _context;
+                position = _position;
+
+                switch (position)
+                {
+                    case 0:
+                        txtInfo.Visibility = ViewStates.Gone;
+                        txtSub.Visibility = ViewStates.Gone;
+                        txtUrl.Visibility = ViewStates.Gone;
+                        txtSub0.Visibility = ViewStates.Gone;
+                        break;
+                    case 1:
+                        txtInfo.Visibility = ViewStates.Visible;
+                        txtSub.Visibility = ViewStates.Gone;
+                        txtUrl.Visibility = ViewStates.Gone;
+                        txtSub0.Visibility = ViewStates.Visible;
+                        txtSub0.Text = "";
+                        txtInfo.Text = context.GetString(Resource.String.txtInfoSubdomain);
+                        break;
+                    case 2:
+                        txtInfo.Visibility = ViewStates.Visible;
+                        txtSub.Visibility = ViewStates.Visible;
+                        txtUrl.Visibility = ViewStates.Visible;
+                        txtSub0.Visibility = ViewStates.Gone;
+                        txtSub.Text = "";
+                        txtUrl.Text = "";
+                        txtInfo.Text = context.GetString(Resource.String.txtInfoURL);
+                        break;
+                }
+            }
+
         }
     }
 }

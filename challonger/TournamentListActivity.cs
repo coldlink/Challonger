@@ -103,6 +103,8 @@ namespace Challonger
             int count = json.Count;
             responseView.Text = count + " " + this.GetString(Resource.String.searchFound);
 
+            
+
             for (int i = 0; i < count; i++)
             {
                 JsonValue tournament;
@@ -168,6 +170,8 @@ namespace Challonger
             this.Finish();
             StartActivity(intent);
         }
+
+
     }
 }
 

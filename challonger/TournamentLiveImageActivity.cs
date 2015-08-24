@@ -21,7 +21,7 @@ namespace Challonger
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            //this.Window.AddFlags(WindowManagerFlags.Fullscreen);
+            this.Window.AddFlags(WindowManagerFlags.Fullscreen);
 
             // Create your application here
             SetContentView(Resource.Layout.TournamentLiveImage);

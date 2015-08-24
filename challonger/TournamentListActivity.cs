@@ -28,10 +28,10 @@ namespace Challonger
         string url;
         bool flagSingle;
 
-        protected override async void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            //this.Window.AddFlags (WindowManagerFlags.Fullscreen);
+            this.Window.AddFlags(WindowManagerFlags.Fullscreen);
 
             // Create your application here
             SetContentView(Resource.Layout.TournamentList);

@@ -25,6 +25,8 @@ namespace Challonger
     {
         List<TournamentListInfo> listInfo = new List<TournamentListInfo>();
         List<string> listUrl = new List<string>();
+        string url;
+        bool flagSingle;
 
         protected override async void OnCreate(Bundle bundle)
         {
@@ -33,11 +35,21 @@ namespace Challonger
 
             // Create your application here
             SetContentView(Resource.Layout.TournamentList);
-            string url = Intent.GetStringExtra("url") ?? "no_url";
-            bool flagSingle = Intent.GetBooleanExtra("flag", false);
+            url = Intent.GetStringExtra("url") ?? "no_url";
+            flagSingle = Intent.GetBooleanExtra("flag", false);
+        }
+
+        protected override async void OnResume()
+        {
+            base.OnResume();
+
             TextView responseView = FindViewById<TextView>(Resource.Id.responseView);
             ListView linLay = FindViewById<ListView>(Resource.Id.listViewLayViewTournament);
             ProgressBar progTournamentListActivityIndicator = FindViewById<ProgressBar>(Resource.Id.progTournamentListActivityIndicator);
+            progTournamentListActivityIndicator.Visibility = ViewStates.Visible;
+
+            listInfo.Clear();
+            listUrl.Clear();
 
             var connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
             //check for internet connection
@@ -91,7 +103,7 @@ namespace Challonger
             else
             {
                 var dlgerrNoConnection = new AlertDialog.Builder(this).SetMessage(Resource.String.errNoConnection).
-					SetNegativeButton(Resource.String.ok, delegate
+                    SetNegativeButton(Resource.String.ok, delegate
                     {
                         this.Finish();
                     }).Show();
@@ -102,8 +114,6 @@ namespace Challonger
         {
             int count = json.Count;
             responseView.Text = count + " " + this.GetString(Resource.String.searchFound);
-
-            
 
             for (int i = 0; i < count; i++)
             {
@@ -154,7 +164,7 @@ namespace Challonger
                     listUrl.Add(url);
                 }
             }
-
+                
             linLay.Adapter = new TournamentListInfoListAdapter(this, listInfo);
             linLay.ItemClick -= LinLay_ItemClick;
             linLay.ItemClick += LinLay_ItemClick;
@@ -167,11 +177,8 @@ namespace Challonger
             intent.PutExtra("url", listUrl[e.Position]);
             gVar.boolTournamentEditModeEnabled = false;
             gVar.lastViewTournamentInfoTabSelected = 0;
-            this.Finish();
             StartActivity(intent);
         }
-
-
     }
 }
 

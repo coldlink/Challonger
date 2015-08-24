@@ -19,7 +19,7 @@
                 android:layout_height="10dp" />
             <TextView
                 android:text="@string/txtCreateTournament_Title"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtCreateNewTournamentTab" />
@@ -30,6 +30,7 @@
                 android:text="@string/txtCreateTournament_Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/txtCreateTournament_Name" />
             <EditText
                 android:layout_width="match_parent"
@@ -43,6 +44,7 @@
             <TextView
                 android:text="@string/txtCreateTournament_Type"
                 android:layout_width="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtCreateTournament_Type" />
             <RadioGroup
@@ -53,21 +55,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/radBtnCreateTournamentType_Single"
                     android:id="@+id/radBtnCreateTournamentType_Single" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/radBtnCreateTournamentType_Double"
                     android:id="@+id/radBtnCreateTournamentType_Double" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/radBtnCreateTournamentType_Round"
                     android:id="@+id/radBtnCreateTournamentType_Round" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/radBtnCreateTournamentType_Swiss"
                     android:id="@+id/radBtnCreateTournamentType_Swiss" />
             </RadioGroup>
@@ -78,6 +84,7 @@
             <TextView
                 android:text="@string/txtCreateTournament_URL"
                 android:layout_width="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtCreateTournament_URL" />
             <EditText
@@ -92,6 +99,7 @@
             <TextView
                 android:text="@string/txtCreateTournament_Subdomain"
                 android:layout_width="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtCreateTournament_Subdomain" />
             <EditText
@@ -107,6 +115,7 @@
                 android:text="@string/txtCreateTournament_Description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/txtCreateTournament_Description" />
             <EditText
                 android:inputType="textMultiLine"
@@ -121,6 +130,7 @@
                 android:text="@string/txtCreateTournament_Cap"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/txtCreateTournament_Cap" />
             <EditText
                 android:inputType="number"
@@ -134,6 +144,7 @@
             <CheckBox
                 android:text="@string/chkCreateTournament_SE_3rdPlaceMatch"
                 android:layout_width="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_height="wrap_content"
                 android:id="@+id/chkCreateTournament_SE_3rdPlaceMatch" />
             <Space
@@ -143,6 +154,7 @@
                 android:text="@string/chkCreateTournament_Signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/chkCreateTournament_Signup" />
             <Space
                 android:layout_width="match_parent"
@@ -151,6 +163,7 @@
                 android:text="@string/chkCreateTournament_Private"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/chkCreateTournament_Private" />
             <LinearLayout
                 android:orientation="horizontal"

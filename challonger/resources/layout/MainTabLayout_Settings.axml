@@ -7,14 +7,14 @@
     android:id="@+id/linMain">
     <TextView
         android:text="@string/txtGetAPI"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:id="@+id/txtGetAPI" />
     <TextView
         android:text="@string/txtCopyPaste"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"

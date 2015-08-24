@@ -70,7 +70,7 @@ namespace Challonger
         }
 
         //Old Main Menu Layout
-        /* class MainTabFragment : Fragment
+        class MainTabFragment : Fragment
         {
             Activity context;
 
@@ -235,9 +235,9 @@ namespace Challonger
 
                 return view;
             }
-        }*/
+        }
 
-        class MainTabFragment : Fragment
+        /*class MainTabFragment : Fragment
         {
             Activity context;
 
@@ -264,7 +264,7 @@ namespace Challonger
                 listView.DescendantFocusability = DescendantFocusability.AfterDescendants;
                 return view;
             }
-        }
+        }*/
 
         class CreateTabFragment : Fragment
         {
@@ -537,8 +537,8 @@ namespace Challonger
                 }
 
                 var view = inflater.Inflate(Resource.Layout.MainTabLayout, container, false);
-                var listView = context.FindViewById<ExpandableListView>(Resource.Id.listViewTest);
-                listView.SetAdapter(new MainMenuExpandableListAdapter(context, listData));
+                //var listView = context.FindViewById<ExpandableListView>(Resource.Id.listViewTest);
+                //listView.SetAdapter(new MainMenuExpandableListAdapter(context, listData));
                 return view;
             }
         }

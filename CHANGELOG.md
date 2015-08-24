@@ -3,7 +3,7 @@ v1.0.5
 Bug Fixes:
 - Pressing back now takes user back to search results instead of main menu
 
-Changes/Addition
+Changes/Additions:
 - Search results now shows more information about found tournaments
 - Minor UI changes
 

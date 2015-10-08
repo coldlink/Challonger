@@ -43,6 +43,12 @@
             android:text="@string/txtMainURL"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/radMainURL" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtMainFav"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/radMainFav" />
     </RadioGroup>
     <TextView
         android:text="@string/txtInfoSubdomain"

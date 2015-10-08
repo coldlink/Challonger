@@ -99,6 +99,7 @@ namespace Challonger
                 RadioButton radMainView = view.FindViewById<RadioButton>(Resource.Id.radMainView);
                 RadioButton radMainSub = view.FindViewById<RadioButton>(Resource.Id.radMainSub);
                 RadioButton radMainUrl = view.FindViewById<RadioButton>(Resource.Id.radMainURL);
+                RadioButton radMainFav = view.FindViewById<RadioButton>(Resource.Id.radMainFav);
                 RadioGroup radMain = view.FindViewById<RadioGroup>(Resource.Id.radMain);
 
                 txtSubdomain.Text = "";
@@ -110,6 +111,19 @@ namespace Challonger
                 txtSubdomainURL.Visibility = ViewStates.Gone;
                 txtURL.Visibility = ViewStates.Gone;
                 btnSearch.Text = this.GetString(Resource.String.btnSearch);
+
+                radMainFav.CheckedChange += (object sender, CompoundButton.CheckedChangeEventArgs e) =>
+                {
+                    txtSubdomain.Text = "";
+                    txtSubdomainURL.Text = "";
+                    txtURL.Text = "";
+                    txtSubdomain.Visibility = ViewStates.Gone;
+                    txtInfoSubdomain.Visibility = ViewStates.Gone;
+                    txtInfoURL.Visibility = ViewStates.Gone;
+                    txtSubdomainURL.Visibility = ViewStates.Gone;
+                    txtURL.Visibility = ViewStates.Gone;
+                    btnSearch.Text = this.GetString(Resource.String.btnSearch);                
+                };
 
                 radMainSub.CheckedChange += (object sender, CompoundButton.CheckedChangeEventArgs e) =>
                 {
@@ -175,6 +189,19 @@ namespace Challonger
                     txtURL.Visibility = ViewStates.Visible;
                     btnSearch.Text = this.GetString(Resource.String.btnSearch);					
                 };
+
+                radMainFav.Click += (object sender, EventArgs e) =>
+                {
+                    txtSubdomain.Text = "";
+                    txtSubdomainURL.Text = "";
+                    txtURL.Text = "";
+                    txtSubdomain.Visibility = ViewStates.Gone;
+                    txtInfoSubdomain.Visibility = ViewStates.Gone;
+                    txtInfoURL.Visibility = ViewStates.Gone;
+                    txtSubdomainURL.Visibility = ViewStates.Gone;
+                    txtURL.Visibility = ViewStates.Gone;
+                    btnSearch.Text = this.GetString(Resource.String.btnSearch);                
+                };
 					
 
                 btnSearch.Click += (object sender, EventArgs e) =>
@@ -231,6 +258,13 @@ namespace Challonger
                             intent.PutExtra("flag", true);
                             StartActivity(intent);
                         }
+                    }
+
+                    if (radMainFav.Checked)
+                    {
+                        url = "FAV";
+                        intent.PutExtra("url", url);
+                        StartActivity(intent);
                     }
                 };
 
@@ -559,6 +593,7 @@ namespace Challonger
             var prefs = context.GetSharedPreferences("Challonger.preferences", FileCreationMode.Private);
             var editor = prefs.Edit();
             editor.PutString("api_key", api_key).Commit();
+           
         }
     }
 

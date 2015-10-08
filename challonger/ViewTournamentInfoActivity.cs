@@ -27,6 +27,7 @@ using System.Threading.Tasks;
 using Android.Nfc.Tech;
 using System.Globalization;
 using Dalvik.SystemInterop;
+using Java.Util;
 
 namespace Challonger
 {
@@ -38,6 +39,7 @@ namespace Challonger
         List<ParticipantInfo> itemsParticipants = new List<ParticipantInfo>();
 
         string url;
+        string tId;
 
         JsonValue json = null;
         JsonValue jsonTournament = null;
@@ -153,6 +155,18 @@ namespace Challonger
                 _menu.FindItem(Resource.Id.ViewTournamentInfoMenuEdit).SetChecked(true);
             else
                 _menu.FindItem(Resource.Id.ViewTournamentInfoMenuEdit).SetChecked(false);
+
+            //add bookmark enabled/disabled code
+            var prefs = this.GetSharedPreferences("Challonger.preferences", FileCreationMode.Private);
+            if (prefs.Contains("favs"))
+            {
+                ICollection<string> favs = prefs.GetStringSet("favs", null);
+                if (favs.Contains(gVar.current_tId))
+                    _menu.FindItem(Resource.Id.ViewTournamentInfoMenuFav).SetChecked(true);
+                else
+                    _menu.FindItem(Resource.Id.ViewTournamentInfoMenuFav).SetChecked(false);
+            }
+
             return base.OnCreateOptionsMenu(_menu);
         }
 
@@ -204,6 +218,52 @@ namespace Challonger
                     {
                         var dialog2 = AddParticipantInfoDialog.Initalize(jsonTournament, this);
                         dialog2.Show(FragmentManager, "dialog");
+                    }
+                    return true;
+                case Resource.Id.ViewTournamentInfoMenuFav:
+                    //add bookmarking code
+                    var prefs = this.GetSharedPreferences("Challonger.preferences", FileCreationMode.Private);
+                    var editor = prefs.Edit();
+                    if (item.IsChecked)
+                    {
+                        if (prefs.Contains("favs"))
+                        {
+                            ICollection<string> favs = prefs.GetStringSet("favs", null);
+                            foreach (object fav in favs)
+                                Console.Out.WriteLine("FROM PREFS: " + fav.ToString());
+                            favs.Remove(jsonTournament["id"].ToString());
+                            editor.PutStringSet("favs", favs).Commit();
+                            foreach (object fav in favs)
+                                Console.Out.WriteLine("FROM PREFS AFTER: " + fav.ToString());
+
+                            item.SetChecked(false);
+                        }
+                    }
+                    else
+                    {
+                        if (prefs.Contains("favs"))
+                        {
+                            ICollection<string> favs = prefs.GetStringSet("favs", null);
+                            foreach (object fav in favs)
+                                Console.Out.WriteLine("FROM PREFS: " + fav.ToString());
+                            favs.Add(jsonTournament["id"].ToString());
+                            editor.PutStringSet("favs", favs).Commit();
+                            foreach (object fav in favs)
+                                Console.Out.WriteLine("FROM PREFS AFTER: " + fav.ToString());
+
+                            item.SetChecked(true);
+                        }
+                        else
+                        {
+                            ICollection<string> favs = new List<string>();
+                            favs.Add(jsonTournament["id"].ToString());
+                            foreach (object fav in favs)
+                                Console.Out.WriteLine("TO PREFS: " + fav.ToString());
+
+                            editor.PutStringSet("favs", favs).Commit();
+
+                            item.SetChecked(true);
+                        }
                     }
                     return true;
             }

@@ -5,20 +5,22 @@ using System.Collections.Generic;
 
 namespace Challonger
 {
-	public class gVar
-	{
-		public static string URL_ { get { return "https://api.challonge.com/v1/"; } }
+    public class gVar
+    {
+        public static string URL_ { get { return "https://api.challonge.com/v1/"; } }
 
-		public static string apiKey_{ get; set; }
+        public static string apiKey_{ get; set; }
 
-		public static Dictionary<int,string> dictMIdIdent;
+        public static Dictionary<int,string> dictMIdIdent;
 
-		public static Dictionary<int,string> dictIdName;
+        public static Dictionary<int,string> dictIdName;
 
-		public static bool boolTournamentEditModeEnabled { get; set; }
+        public static bool boolTournamentEditModeEnabled { get; set; }
 
-		public static int lastViewTournamentInfoTabSelected { get; set; }
+        public static int lastViewTournamentInfoTabSelected { get; set; }
 
-	}
+        public static string current_tId { get; set; }
+
+    }
 }
 

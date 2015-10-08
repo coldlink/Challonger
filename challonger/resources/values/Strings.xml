@@ -27,6 +27,7 @@
   <string name="txtMainView">Created</string>
   <string name="txtMainSub">Organisation/Subdomain</string>
   <string name="txtMainURL">Challonge URL</string>
+  <string name="txtMainFav">Bookmarks</string>
   <string name="txtCreateTournament_Title">Create New Tournament</string>
   <string name="txtCreateTournament_Name">Your event\'s name/title (Max: 60 characters)</string>
   <string name="txtCreateTournament_Name_Edit">Event name - (Required)</string>
@@ -63,6 +64,7 @@
 	<string name="dlg422"> Validation error(s) for create or update method. Does your input exist? Check input and try again.</string>
 	<string name="dlg500"> Something went wrong with Challonge. If you keep recieving this contact the developer and/or Challonge</string>
 	<string name="errNoConnection">No internet connection detected. Please check connection and try again.</string>
+	<string name="errNoFavs">No bookmarked tournaments found.</string>
 	<string name="searchResults">Search Results</string>
 	<string name="searchFound"> tournament(s) found:</string>
 	<string name="viewTournamentInfo_Info">Information</string>
@@ -154,7 +156,11 @@
 	<string name="True">Yes</string>
 	<string name="False">No</string>
 	<string name="btnHowToUse">How To Use</string>
-	<string name="txtHowToUse">How to use:\n\n• Add your API key to the "Settings" tab.\n\n• Find tournament through "Menu" tab.\n\n• Create tournament through "Create" tab.\n\n- Edit tournament info:\n• Click Menu button/icon ->" Enable Editing"\n• Long Click on tournament information item to edit.\n• Start/Reset/Finalize/Delete tournament by long clicking "State" item.\n\n- Update match:/n• Click Menu button/icon -> "Enable Editing"/n• Single click score to add 1. Long click score to minus 1.\n• Click on winning player -> Save Match Information.\n\n- Add participant (if tournament not started):\n• Click Menu button/icon -> "Enable Editing"\n• Click Menu button/icon -> Add participant\n\n- Edit/Remove participant:\n • Click Menu button/icon -> "Enable Editing"\n• Long click on participant.</string>
+	<string name="txtHowToUse">How to use:\n\n• Add your API key to the "Settings" tab.\n\n• Find tournament through "Menu" tab.\n\n• Create tournament through "Create" tab.\n\n- Edit tournament info:\n• Click Menu button/icon -> Check "Edit Mode"\n• Long Click on tournament information item to edit.\n• Start/Reset/Finalize/Delete tournament by long clicking "State" item.\n\n- Update match:/n• Click Menu button/icon -> "Enable Editing"/n• Single click score to add 1. Long click score to minus 1.\n• Click on winning player -> Save Match Information.\n\n- Add participant (if tournament not started):\n• Click Menu button/icon -> "Enable Editing"\n• Click Menu button/icon -> Add participant\n\n- Edit/Remove participant:\n • Click Menu button/icon -> "Enable Editing"\n• Long click on participant.</string>
 	<string name="btnAbout">About</string>
 	<string name="txtAbout">Challonger v1.0.5\n\nUnofficial Challonge App for Android\n\nApp by Mahesh Makani (@coldlink_)\n\nSource: https://github.com/coldlink/challonger</string>
+	<string name="optRefresh">Refresh</string>
+	<string name="optEdit">Edit Mode</string>
+	<string name="optAddPart">Add Participant</string>
+	<string name="optFav">Bookmark</string>
 </resources>

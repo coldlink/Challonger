@@ -2,13 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/ViewTournamentInfoMenuRefresh"
           android:icon="@drawable/ic_refresh_white_48dp"
-          android:title="Refresh"
+          android:title="@string/optRefresh"
           android:showAsAction="ifRoom"/>
     <item android:id="@+id/ViewTournamentInfoMenuEdit"
           android:icon="@drawable/ic_challonge"
-          android:title="Enable Editing"
+          android:title="@string/optEdit"
           android:checkable="true"/>
     <item android:id="@+id/ViewTournamentInfoMenuAddParticipant"
           android:icon="@drawable/ic_add_white_48dp"
-          android:title="Add Participant"		/>
+          android:title="@string/optAddPart"		/>
+    <item android:id="@+id/ViewTournamentInfoMenuFav"
+          android:icon="@drawable/ic_add_white_48dp"
+          android:title="@string/optFav"
+          android:checkable="true"/>
 </menu>
